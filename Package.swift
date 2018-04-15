@@ -11,7 +11,7 @@ let package = Package(
             targets: ["TravisClient"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/antitypical/Result", from: "3.2.0"),
+        .package(url: "https://github.com/antitypical/Result", from: "3.0.0"),
     ],
     targets: [
         .target(
