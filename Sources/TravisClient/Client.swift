@@ -60,27 +60,27 @@ public class TravisClient {
     // MARK: Repository
 
     public func repository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())", method: .post)
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())", method: .post(nil))
         request(url, completion: completion)
     }
 
     public func activateRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/activate", method: .post)
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/activate", method: .post(nil))
         request(url, completion: completion)
     }
 
     public func deactivateRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/deactivate", method: .post)
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/deactivate", method: .post(nil))
         request(url, completion: completion)
     }
 
     public func starRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/star", method: .post)
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/star", method: .post(nil))
         request(url, completion: completion)
     }
 
     public func unstarRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/unstar", method: .post)
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/unstar", method: .post(nil))
         request(url, completion: completion)
     }
 
@@ -109,18 +109,33 @@ public class TravisClient {
     }
 
     public func restartBuild(identifier: String, completion: @escaping ActionCompletion<MinimalBuild>) {
-        let url = makeURL(path: "/build/\(identifier)/restart", method: .post)
+        let url = makeURL(path: "/build/\(identifier)/restart", method: .post(nil))
         request(url, completion: completion)
     }
 
     public func cancelBuild(identifier: String, completion: @escaping Completion<MinimalBuild>) {
-        let url = makeURL(path: "/build/\(identifier)/cancel", method: .post)
+        let url = makeURL(path: "/build/\(identifier)/cancel", method: .post(nil))
+        request(url, completion: completion)
+    }
+
+    // MARK: Env variables
+
+    public func environmentVariables(forRepository repoIdOrSlug: String, completion: @escaping Completion<[EnvironmentVariable]>) {
+        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars")
+        request(url, completion: completion)
+    }
+
+    public func create(_ variable: EnvironmentVariableRequest,
+                       forRepository repoIdOrSlug: String,
+                       completion: @escaping Completion<EnvironmentVariable>) {
+        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars", method: .post(variable))
         request(url, completion: completion)
     }
 
     // MARK: Settings
 
-    public func settings(forRepository repoIdOrSlug: String, completion: @escaping Completion<[Setting]>) {
+    public func settings(forRepository repoIdOrSlug: String,
+                         completion: @escaping Completion<[Setting]>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/settings")
         request(url, completion: completion)
     }
@@ -135,15 +150,15 @@ public class TravisClient {
 
     // MARK: Requests
 
-    func request<T: Codable>(_ url: URLRequest, completion: @escaping Completion<T>) {
+    func request<T>(_ url: URLRequest, completion: @escaping Completion<T>) {
         concreteRequest(url, completion: completion)
     }
 
-    func request<T: Codable>(_ url: URLRequest, completion: @escaping ActionCompletion<T>) {
+    func request<T>(_ url: URLRequest, completion: @escaping ActionCompletion<T>) {
         concreteRequest(url, completion: completion)
     }
 
-    func concreteRequest<T>(_ url: URLRequest, completion: @escaping ResultCompletion<T>) {
+    func concreteRequest<T: Codable>(_ url: URLRequest, completion: @escaping ResultCompletion<T>) {
         session.dataTask(with: url) { data, _, _ in
             guard let someData = data else {
                 let result: Result<T, TravisError> = Result(error: .noData)
@@ -185,7 +200,10 @@ extension TravisClient {
         components.queryItems = query
 
         var request = URLRequest(url: components.url!)
-        request.httpMethod = method.rawValue
+        request.httpMethod = method.method
+        if case let .post(encodable) = method {
+            request.httpBody = try? JSONEncoder().encode(encodable)
+        }
         return request
     }
 }

@@ -1,8 +1,15 @@
 import Foundation
 
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
+enum HTTPMethod {
+    case get
+    case post(Encodable?)
+
+    var method: String {
+        switch self {
+        case .get: return "GET"
+        case .post: return "POST"
+        }
+    }
 }
 
 extension String {
