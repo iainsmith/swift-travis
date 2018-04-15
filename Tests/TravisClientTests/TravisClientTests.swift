@@ -52,10 +52,12 @@ final class TravisClientTests: XCTestCase {
     func testJobsAndLink() throws {
         let exp = expectation(description: "network")
         client.jobs(forBuild: "365367401") { [weak self] result in
-            if case let .success(builds) = result {
-                let buildLink = builds.object[0].build
-                self?.client.follow(embed: buildLink) { result in
+            if case let .success(jobs) = result {
+                let firstBuild = \[Job][0].build
+                let build = jobs[firstBuild]
+                self?.client.follow(embed: build) { result in
                     if case let .success(build) = result {
+                        XCTAssertEqual(build[\.id], 365_367_401)
                         exp.fulfill()
                     } else {
                         XCTFail()
