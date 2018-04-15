@@ -2,12 +2,16 @@ import Foundation
 
 enum HTTPMethod {
     case get
-    case post(Encodable?)
+    case post
+    case patch
+    case delete
 
     var method: String {
         switch self {
-        case .get: return "GET"
-        case .post: return "POST"
+        case .get:      return "GET"
+        case .post:     return "POST"
+        case .delete:   return "DELETE"
+        case .patch:    return "PATCH"
         }
     }
 }

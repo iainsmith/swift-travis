@@ -1,6 +1,7 @@
 import TravisClient
 import XCTest
 
+@available(OSX 10.12, *)
 final class TravisClientTests: XCTestCase {
     var client: TravisClient!
 
@@ -58,6 +59,7 @@ final class TravisClientTests: XCTestCase {
                 self?.client.follow(embed: build) { result in
                     if case let .success(build) = result {
                         XCTAssertEqual(build[\.id], 365_367_401)
+                        XCTAssertEqual(build[\.state], "passed")
                         exp.fulfill()
                     } else {
                         XCTFail()

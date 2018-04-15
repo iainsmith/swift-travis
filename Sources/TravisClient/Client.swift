@@ -1,6 +1,7 @@
 import Foundation
 @_exported import Result
 
+@available(OSX 10.12, *)
 public class TravisClient {
     let session: URLSession
     let travis: TravisCloud
@@ -60,27 +61,27 @@ public class TravisClient {
     // MARK: Repository
 
     public func repository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())", method: .post(nil))
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())", method: .post)
         request(url, completion: completion)
     }
 
     public func activateRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/activate", method: .post(nil))
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/activate", method: .post)
         request(url, completion: completion)
     }
 
     public func deactivateRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/deactivate", method: .post(nil))
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/deactivate", method: .post)
         request(url, completion: completion)
     }
 
     public func starRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/star", method: .post(nil))
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/star", method: .post)
         request(url, completion: completion)
     }
 
     public func unstarRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
-        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/unstar", method: .post(nil))
+        let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/unstar", method: .post)
         request(url, completion: completion)
     }
 
@@ -109,12 +110,12 @@ public class TravisClient {
     }
 
     public func restartBuild(identifier: String, completion: @escaping ActionCompletion<MinimalBuild>) {
-        let url = makeURL(path: "/build/\(identifier)/restart", method: .post(nil))
+        let url = makeURL(path: "/build/\(identifier)/restart", method: .post)
         request(url, completion: completion)
     }
 
     public func cancelBuild(identifier: String, completion: @escaping Completion<MinimalBuild>) {
-        let url = makeURL(path: "/build/\(identifier)/cancel", method: .post(nil))
+        let url = makeURL(path: "/build/\(identifier)/cancel", method: .post)
         request(url, completion: completion)
     }
 
@@ -128,7 +129,23 @@ public class TravisClient {
     public func create(_ variable: EnvironmentVariableRequest,
                        forRepository repoIdOrSlug: String,
                        completion: @escaping Completion<EnvironmentVariable>) {
-        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars", method: .post(variable))
+        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars", method: .post)
+        request(url, completion: completion)
+    }
+
+    public func update(_ variable: EnvironmentVariableRequest,
+                       environmentVariableIdentifier: String,
+                       forRepository repoIdOrSlug: String,
+                       completion: @escaping Completion<EnvironmentVariable>) {
+        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_var/\(environmentVariableIdentifier)", method: .patch)
+        request(url, completion: completion)
+    }
+
+
+    public func delete(environmentVariableIdentifier: String,
+                       forRepository repoIdOrSlug: String,
+                       completion: @escaping Completion<EnvironmentVariable>) {
+        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_var/\(environmentVariableIdentifier)", method: .delete)
         request(url, completion: completion)
     }
 
@@ -166,18 +183,27 @@ public class TravisClient {
                 return
             }
 
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.dateDecodingStrategy = .iso8601
             do {
-                let result = try JSONDecoder().decode(T.self, from: someData)
+                let result = try jsonDecoder.decode(T.self, from: someData)
                 onMain(completion: completion, result: .init(result))
             } catch {
-                print(error)
-                let result: Result<T, TravisError> = Result(error: .unableToDecode(error: error))
+                let wrappedError: TravisError
+                if let travisMessage = try? jsonDecoder.decode(TravisErrorMessage.self, from: someData) {
+                    wrappedError = TravisError.travis(travisMessage)
+                } else {
+                    wrappedError = TravisError.unableToDecode(error: error)
+                }
+                let result: Result<T, TravisError> = Result(error: wrappedError)
                 onMain(completion: completion, result: result)
             }
         }.resume()
     }
 }
 
+
+@available(OSX 10.12, *)
 extension TravisClient {
     public static func makeConfiguration(withToken token: String) -> URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default
@@ -191,6 +217,7 @@ extension TravisClient {
     }
 }
 
+@available(OSX 10.12, *)
 extension TravisClient {
     func makeURL(path: String, query: [URLQueryItem]? = nil, method: HTTPMethod = .get) -> URLRequest {
         var components = URLComponents()
@@ -201,9 +228,9 @@ extension TravisClient {
 
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.method
-        if case let .post(encodable) = method {
-            request.httpBody = try? JSONEncoder().encode(encodable)
-        }
+//        if case let .post(encodable) = method {
+//            request.httpBody = try? JSONEncoder().encode(encodable)
+//        }
         return request
     }
 }
