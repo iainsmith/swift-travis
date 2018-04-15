@@ -15,10 +15,10 @@ public struct Action<Object: Codable>: Codable, ObjectSubscriptable {
     public init(from decoder: Decoder) throws {
         let standardContainer = try decoder.container(keyedBy: CodingKeys.self)
         type = try standardContainer.decode(String.self, forKey: .type)
-        let resource_type = try standardContainer.decode(String.self, forKey: .resourceType)
-        self.resourceType = resource_type
+        let resource = try standardContainer.decode(String.self, forKey: .resourceType)
+        resourceType = resource
         stateChange = try standardContainer.decode(String.self, forKey: .stateChange)
         let dynamicContainer = try decoder.container(keyedBy: DynamicKey.self)
-        object = try dynamicContainer.decode(Object.self, forKey: DynamicKey(stringValue: resource_type)!)
+        object = try dynamicContainer.decode(Object.self, forKey: DynamicKey(stringValue: resource)!)
     }
 }

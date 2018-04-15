@@ -8,10 +8,10 @@ enum HTTPMethod {
 
     var method: String {
         switch self {
-        case .get:      return "GET"
-        case .post:     return "POST"
-        case .delete:   return "DELETE"
-        case .patch:    return "PATCH"
+        case .get: return "GET"
+        case .post: return "POST"
+        case .delete: return "DELETE"
+        case .patch: return "PATCH"
         }
     }
 }

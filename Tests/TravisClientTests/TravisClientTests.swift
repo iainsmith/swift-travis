@@ -77,10 +77,17 @@ final class TravisClientTests: XCTestCase {
     func testRestartBuild() throws {
         let exp = expectation(description: "network")
         client.restartBuild(identifier: "359741180") { result in
-            if case let .success(build) = result {
+            switch result {
+            case let .success(result):
                 exp.fulfill()
-            } else {
-                XCTFail()
+            case let .failure(error):
+                switch error {
+                case let .travis(message):
+                    XCTAssertEqual(message.message, "build already running, cannot restart")
+                    exp.fulfill()
+                default:
+                    XCTFail()
+                }
             }
         }
 
@@ -106,7 +113,7 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.settings(forRepository: "iainsmith/SwiftGherkin") { result in
             if case let .success(settings) = result {
-                print(settings)
+                XCTAssertEqual(settings[\[Setting][0].name], "builds_only_with_travis_yml")
                 exp.fulfill()
             } else {
                 XCTFail()

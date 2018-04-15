@@ -126,21 +126,20 @@ public class TravisClient {
         request(url, completion: completion)
     }
 
-    public func create(_ variable: EnvironmentVariableRequest,
+    public func create(_: EnvironmentVariableRequest,
                        forRepository repoIdOrSlug: String,
                        completion: @escaping Completion<EnvironmentVariable>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars", method: .post)
         request(url, completion: completion)
     }
 
-    public func update(_ variable: EnvironmentVariableRequest,
+    public func update(_: EnvironmentVariableRequest,
                        environmentVariableIdentifier: String,
                        forRepository repoIdOrSlug: String,
                        completion: @escaping Completion<EnvironmentVariable>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_var/\(environmentVariableIdentifier)", method: .patch)
         request(url, completion: completion)
     }
-
 
     public func delete(environmentVariableIdentifier: String,
                        forRepository repoIdOrSlug: String,
@@ -201,7 +200,6 @@ public class TravisClient {
         }.resume()
     }
 }
-
 
 @available(OSX 10.12, *)
 extension TravisClient {

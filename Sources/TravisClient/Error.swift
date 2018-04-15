@@ -6,8 +6,8 @@ public enum TravisError: Error {
 }
 
 public struct TravisErrorMessage: Codable {
-    let type: String
-    let message: String
+    public let type: String
+    public let message: String
 
     enum CodingKeys: String, CodingKey {
         case type = "error_type"
