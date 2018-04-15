@@ -11,7 +11,7 @@ extension String {
     }
 }
 
-func onMain<T: Decodable>(completion: @escaping ResultCompletion<T>, result: Result<T, TravisError>) {
+func onMain<T: Codable>(completion: @escaping ResultCompletion<T>, result: Result<T, TravisError>) {
     DispatchQueue.main.async {
         completion(result)
     }
