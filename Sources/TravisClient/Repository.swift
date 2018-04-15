@@ -5,7 +5,16 @@ public struct Repository: Codable {
     public let active: Bool
 
     public let description: String?
-    public let github_language: String?
+    public let githubLanguage: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case slug
+        case active
+        case description
+        case githubLanguage = "github_language"
+    }
 }
 
 public struct MinimalRepository: Codable, Minimal {
