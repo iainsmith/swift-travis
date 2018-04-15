@@ -83,6 +83,21 @@ final class TravisClientTests: XCTestCase {
         waitForExpectations(timeout: 20, handler: nil)
     }
 
+    func testLogs() throws {
+        let exp = expectation(description: "network")
+        client.log(forJob: "365367403") { result in
+            if case let .success(log) = result {
+                let number = log[\.id]
+                XCTAssertEqual(number, 266_982_558)
+                exp.fulfill()
+            } else {
+                XCTFail()
+            }
+        }
+
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+
     func testSettings() throws {
         let exp = expectation(description: "network")
         client.settings(forRepository: "iainsmith/SwiftGherkin") { result in

@@ -96,6 +96,11 @@ public class TravisClient {
         request(url, completion: completion)
     }
 
+    public func log(forJob jobIdentifier: String, completion: @escaping Completion<Log>) {
+        let url = makeURL(path: "/job/\(jobIdentifier.pathEscape())/log")
+        request(url, completion: completion)
+    }
+
     // MARK: Build
 
     public func build(identifier: String, completion: @escaping Completion<Build>) {
