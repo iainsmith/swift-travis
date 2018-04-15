@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Action<Object: Codable>: Codable {
+public struct Action<Object: Codable>: Codable, ObjectSubscriptable {
     public let type: String
     public let resource_type: String
     public let state_change: String
@@ -10,10 +10,6 @@ public struct Action<Object: Codable>: Codable {
         case type = "@type"
         case resource_type
         case state_change
-    }
-
-    public subscript<V>(_ keyPath: KeyPath<Object, V>) -> V {
-        return object[keyPath: keyPath]
     }
 
     public init(from decoder: Decoder) throws {

@@ -1,6 +1,4 @@
-import Foundation
-
-public struct Embed<T: Codable>: Codable {
+public struct Embed<T: Codable>: Codable, ObjectSubscriptable {
     public let type: String
     public let path: String?
     public let object: T

@@ -1,6 +1,4 @@
-import Foundation
-
-public struct Meta<Object: Codable>: Codable {
+public struct Meta<Object: Codable>: Codable, ObjectSubscriptable {
     public let type: String
     public let path: String
     public let pagination: Pagination?
@@ -10,10 +8,6 @@ public struct Meta<Object: Codable>: Codable {
         case type = "@type"
         case path = "@href"
         case pagination = "@pagination"
-    }
-
-    public subscript<V>(_ keyPath: KeyPath<Object, V>) -> V {
-        return object[keyPath: keyPath]
     }
 
     public init(from decoder: Decoder) throws {
