@@ -3,7 +3,7 @@ public protocol ObjectSubscriptable {
 
     var object: Object { get }
 
-    subscript<V>(_ keyPath: KeyPath<Object, V>) -> V { get }
+    subscript<V>(_: KeyPath<Object, V>) -> V { get }
 }
 
 extension ObjectSubscriptable {
