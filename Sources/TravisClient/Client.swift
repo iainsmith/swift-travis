@@ -144,23 +144,6 @@ public class TravisClient {
     }
 }
 
-extension String {
-    func pathEscape() -> String {
-        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
-    }
-}
-
-func onMain<T: Decodable>(completion: @escaping ResultCompletion<T>, result: Result<T, TravisError>) {
-    DispatchQueue.main.async {
-        completion(result)
-    }
-}
-
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-}
-
 extension TravisClient {
     public static func makeConfiguration(withToken token: String) -> URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default
