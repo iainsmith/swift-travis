@@ -43,6 +43,20 @@ public class TravisClient {
 
     // TODO: Add restart & cancel job
 
+    // MARK: Branches
+
+    public func branches(forBuild identfier: String, completion: @escaping Completion<[Branch]>) {
+        let url = makeURL(path: "/repo/\(identfier.pathEscape())/branchs")
+        request(url, completion: completion)
+    }
+
+    public func branch(forRepo repoIdentifier: String,
+                       withIdentifier identifier: String,
+                       completion: @escaping Completion<Branch>) {
+        let url = makeURL(path: "/repo/\(repoIdentifier.pathEscape())/branch/\(identifier.pathEscape())")
+        request(url, completion: completion)
+    }
+
     // MARK: Repository
 
     public func repository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
