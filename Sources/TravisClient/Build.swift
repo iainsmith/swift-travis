@@ -1,5 +1,3 @@
-import Foundation
-
 public struct MinimalBuild: Codable, Minimal {
     public let id: Int
     public let number: String

@@ -1,5 +1,3 @@
-import Foundation
-
 public struct MinimalJob: Codable, Minimal {
     public let id: Int
 

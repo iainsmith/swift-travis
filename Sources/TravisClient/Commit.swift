@@ -1,5 +1,3 @@
-import Foundation
-
 public struct MinimalCommit: Codable {
     public let id: Int
     public let sha: String

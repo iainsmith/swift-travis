@@ -12,8 +12,8 @@ public class TravisClient {
 
     // MARK: Repositories
 
-    public func repositories(forUser user: String, completion: @escaping Completion<[Repository]>) {
-        let url = makeURL(path: "/owner/\(user.pathEscape())/repos")
+    public func repositories(forOwner owner: String, completion: @escaping Completion<[Repository]>) {
+        let url = makeURL(path: "/owner/\(owner.pathEscape())/repos")
         request(url, completion: completion)
     }
 
@@ -41,7 +41,7 @@ public class TravisClient {
         request(url, completion: completion)
     }
 
-    // restart & cancel job
+    // TODO: Add restart & cancel job
 
     // MARK: Repository
 

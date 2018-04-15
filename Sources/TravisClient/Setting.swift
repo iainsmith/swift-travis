@@ -1,5 +1,3 @@
-import Foundation
-
 public struct Setting: Codable {
     public let name: String
     public let value: Value

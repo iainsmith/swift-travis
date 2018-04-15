@@ -1,5 +1,3 @@
-import Foundation
-
 public typealias Completion<T: Codable> = (Result<Meta<T>, TravisError>) -> Void
 public typealias ActionCompletion<T: Codable> = (Result<Action<T>, TravisError>) -> Void
 

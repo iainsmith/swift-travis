@@ -1,12 +1,3 @@
-//
-//  Pagination.swift
-//  TravisClient
-//
-//  Created by iainsmith on 14/04/2018.
-//
-
-import Foundation
-
 public struct Pagination: Codable {
     public let limit: Int
     public let offset: Int
