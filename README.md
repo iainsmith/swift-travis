@@ -2,8 +2,9 @@
 
 A Travis v3 API client for Swift 4.x
 
-## Browse the docs
+[![Build Status](https://travis-ci.org/iainsmith/TravisClient.svg?branch=master)](https://travis-ci.org/iainsmith/TravisClient)
 
+## Browse the docs
 
 
 ## Usage
