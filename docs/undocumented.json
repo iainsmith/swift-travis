@@ -1,0 +1,495 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Action.swift",
+      "line": 5,
+      "symbol": "Action.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Action.swift",
+      "line": 6,
+      "symbol": "Action.resourceType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Action.swift",
+      "line": 7,
+      "symbol": "Action.stateChange",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Action.swift",
+      "line": 8,
+      "symbol": "Action.object",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Branch.swift",
+      "line": 13,
+      "symbol": "Branch",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 52,
+      "symbol": "TravisClient.jobs(forBuild:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 57,
+      "symbol": "TravisClient.job(withIdentifier:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 66,
+      "symbol": "TravisClient.branches(forBuild:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 71,
+      "symbol": "TravisClient.branch(forRepo:withIdentifier:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 80,
+      "symbol": "TravisClient.repository(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 85,
+      "symbol": "TravisClient.activateRepository(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 90,
+      "symbol": "TravisClient.deactivateRepository(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 95,
+      "symbol": "TravisClient.starRepository(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 100,
+      "symbol": "TravisClient.unstarRepository(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 107,
+      "symbol": "TravisClient.userBuilds(completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 112,
+      "symbol": "TravisClient.builds(forRepository:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 117,
+      "symbol": "TravisClient.log(forJob:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 124,
+      "symbol": "TravisClient.build(identifier:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 129,
+      "symbol": "TravisClient.restartBuild(identifier:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 134,
+      "symbol": "TravisClient.cancelBuild(identifier:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 141,
+      "symbol": "TravisClient.environmentVariables(forRepository:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 146,
+      "symbol": "TravisClient.create(_:forRepository:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 155,
+      "symbol": "TravisClient.update(_:environmentVariableIdentifier:forRepository:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 163,
+      "symbol": "TravisClient.delete(environmentVariableIdentifier:forRepository:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 172,
+      "symbol": "TravisClient.settings(forRepository:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 180,
+      "symbol": "TravisClient.follow(embed:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Client.swift",
+      "line": 227,
+      "symbol": "TravisClient.makeConfiguration(withToken:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Embed.swift",
+      "line": 4,
+      "symbol": "Embed.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Embed.swift",
+      "line": 5,
+      "symbol": "Embed.path",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Embed.swift",
+      "line": 6,
+      "symbol": "Embed.object",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Endpoint.swift",
+      "line": 3,
+      "symbol": "TravisEndpoint.pro",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Endpoint.swift",
+      "line": 4,
+      "symbol": "TravisEndpoint.org",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Endpoint.swift",
+      "line": 5,
+      "symbol": "TravisEndpoint.enterprise",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Error.swift",
+      "line": 3,
+      "symbol": "TravisError.travis",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Error.swift",
+      "line": 4,
+      "symbol": "TravisError.notPathEscapable",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Error.swift",
+      "line": 5,
+      "symbol": "TravisError.noData",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Error.swift",
+      "line": 6,
+      "symbol": "TravisError.unableToDecode",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Error.swift",
+      "line": 11,
+      "symbol": "TravisErrorMessage.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Error.swift",
+      "line": 12,
+      "symbol": "TravisErrorMessage.message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Job.swift",
+      "line": 5,
+      "symbol": "MinimalJob.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Meta.swift",
+      "line": 1,
+      "symbol": "Meta",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Meta.swift",
+      "line": 2,
+      "symbol": "Meta.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Meta.swift",
+      "line": 3,
+      "symbol": "Meta.path",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Meta.swift",
+      "line": 4,
+      "symbol": "Meta.pagination",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Meta.swift",
+      "line": 5,
+      "symbol": "Meta.object",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Pagination.swift",
+      "line": 3,
+      "symbol": "Pagination.limit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Pagination.swift",
+      "line": 4,
+      "symbol": "Pagination.offset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Pagination.swift",
+      "line": 5,
+      "symbol": "Pagination.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Pagination.swift",
+      "line": 6,
+      "symbol": "Pagination.isFirst",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Pagination.swift",
+      "line": 7,
+      "symbol": "Pagination.isLast",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 3,
+      "symbol": "MinimalRepository.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 4,
+      "symbol": "MinimalRepository.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 5,
+      "symbol": "MinimalRepository.slug",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 10,
+      "symbol": "Repository",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 11,
+      "symbol": "Repository.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 12,
+      "symbol": "Repository.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 13,
+      "symbol": "Repository.slug",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 14,
+      "symbol": "Repository.active",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 16,
+      "symbol": "Repository.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Repository.swift",
+      "line": 17,
+      "symbol": "Repository.githubLanguage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Setting.swift",
+      "line": null,
+      "symbol": "Setting",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Setting.swift",
+      "line": 1,
+      "symbol": "Setting",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Setting.swift",
+      "line": 2,
+      "symbol": "Setting.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Setting.swift",
+      "line": 3,
+      "symbol": "Setting.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Setting.swift",
+      "line": 7,
+      "symbol": "Setting.Value",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Setting.swift",
+      "line": 8,
+      "symbol": "Setting.Value.bool",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Setting.swift",
+      "line": 9,
+      "symbol": "Setting.Value.int",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Subscriptable.swift",
+      "line": 1,
+      "symbol": "ObjectSubscriptable",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Subscriptable.swift",
+      "line": 4,
+      "symbol": "ObjectSubscriptable.object",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/iainsmith/Code/TravisClient/Sources/TravisClient/Typealiases.swift",
+      "line": 6,
+      "symbol": "Minimal",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/iainsmith/Code/TravisClient"
+}

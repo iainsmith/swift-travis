@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MinimalBuild Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/MinimalBuild" class="dashAnchor"></a>
+    <a title="MinimalBuild Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TravisClient Docs</a> (55% documented)</p>
+        <p class="header-right"><a href="https://github.com/iainsmith/TravisClient"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TravisClient Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MinimalBuild Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/TravisClient.html">TravisClient</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TravisEndpoint.html">TravisEndpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TravisError.html">TravisError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:12TravisClient7MinimalP">Minimal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ObjectSubscriptable.html">ObjectSubscriptable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Action.html">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Branch.html">Branch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Build.html">Build</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Embed.html">Embed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EnvironmentVariable.html">EnvironmentVariable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:12TravisClient26EnvironmentVariableRequestV">EnvironmentVariableRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Job.html">Job</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Log.html">Log</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Meta.html">Meta</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalBranch.html">MinimalBranch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalBuild.html">MinimalBuild</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalCommit.html">MinimalCommit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalEnvironmentVariable.html">MinimalEnvironmentVariable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalJob.html">MinimalJob</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalRepository.html">MinimalRepository</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Pagination.html">Pagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Repository.html">Repository</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Setting.html">Setting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Setting/Value.html">– Value</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TravisErrorMessage.html">TravisErrorMessage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MinimalBuild</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MinimalBuild</span><span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12TravisClient7MinimalP">Minimal</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Included when the resource is returned as part of another resource</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV2idSiv"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV2idSiv">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Value uniquely identifying the build</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L7">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV6numberSSv"></a>
+                    <a name="//apple_ref/swift/Property/number" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV6numberSSv">number</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Incremental number for a repository&rsquo;s builds</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L10">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV5stateSSv"></a>
+                    <a name="//apple_ref/swift/Property/state" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV5stateSSv">state</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Current state of the build</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L13">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV8durationSiSgv"></a>
+                    <a name="//apple_ref/swift/Property/duration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV8durationSiSgv">duration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Wall clock time in seconds</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L16">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV9eventTypeSSv"></a>
+                    <a name="//apple_ref/swift/Property/eventType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV9eventTypeSSv">eventType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Event that triggered the build</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">eventType</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L19">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV13previousStateSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/previousState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV13previousStateSSSgv">previousState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>State of the previous build (useful to see if state changed)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">previousState</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L22">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV16pullRequestTitleSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/pullRequestTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV16pullRequestTitleSSSgv">pullRequestTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Title of the build&rsquo;s pull request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">pullRequestTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L25">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV17pullRequestNumberSiSgv"></a>
+                    <a name="//apple_ref/swift/Property/pullRequestNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV17pullRequestNumberSiSgv">pullRequestNumber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Number of the build&rsquo;s pull request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">pullRequestNumber</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L28">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV9startedAt10Foundation4DateVSgv"></a>
+                    <a name="//apple_ref/swift/Property/startedAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV9startedAt10Foundation4DateVSgv">startedAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When the build started</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">startedAt</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L31">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClient12MinimalBuildV10finishedAt10Foundation4DateVSgv"></a>
+                    <a name="//apple_ref/swift/Property/finishedAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClient12MinimalBuildV10finishedAt10Foundation4DateVSgv">finishedAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When the build finished</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">finishedAt</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Build.swift#L34">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Iain Smith</a>. All rights reserved. (Last updated: 2018-04-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

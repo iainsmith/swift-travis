@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TravisClient Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/TravisClient" class="dashAnchor"></a>
+    <a title="TravisClient Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TravisClient Docs</a> (55% documented)</p>
+        <p class="header-right"><a href="https://github.com/iainsmith/TravisClient"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TravisClient Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TravisClient Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/TravisClient.html">TravisClient</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TravisEndpoint.html">TravisEndpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TravisError.html">TravisError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:12TravisClient7MinimalP">Minimal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ObjectSubscriptable.html">ObjectSubscriptable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Action.html">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Branch.html">Branch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Build.html">Build</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Embed.html">Embed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EnvironmentVariable.html">EnvironmentVariable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:12TravisClient26EnvironmentVariableRequestV">EnvironmentVariableRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Job.html">Job</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Log.html">Log</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Meta.html">Meta</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalBranch.html">MinimalBranch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalBuild.html">MinimalBuild</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalCommit.html">MinimalCommit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalEnvironmentVariable.html">MinimalEnvironmentVariable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalJob.html">MinimalJob</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MinimalRepository.html">MinimalRepository</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Pagination.html">Pagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Repository.html">Repository</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Setting.html">Setting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Setting/Value.html">– Value</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TravisErrorMessage.html">TravisErrorMessage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TravisClient</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TravisClient</span></code></pre>
+
+                </div>
+              </div>
+            <p>API Client for talking to the travis v3 api.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAACABSS5token_AA0A8EndpointO4hostSo10URLSessionCSg7sessiontcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(token:host:session:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAACABSS5token_AA0A8EndpointO4hostSo10URLSessionCSg7sessiontcfc">init(token:host:session:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a TravisClient to interact with the API</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">host</span><span class="p">:</span> <span class="kt"><a href="../Enums/TravisEndpoint.html">TravisEndpoint</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">org</span><span class="p">,</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">URLSession</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your travis api token</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>host</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.org, .pro or .enterprise(<q>custom.url</q>)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>session</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional URLSession for dependency injection</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L15-L18">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Repositories"></a>
+                <a name="//apple_ref/swift/Section/Repositories" class="dashAnchor"></a>
+                <a href="#/Repositories">
+                  <h3 class="section-name">Repositories</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC12repositoriesySS8forOwner_y6ResultAEOyAA4MetaVySayAA10RepositoryVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/repositories(forOwner:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC12repositoriesySS8forOwner_y6ResultAEOyAA4MetaVySayAA10RepositoryVGGAA0A5ErrorOGc10completiontF">repositories(forOwner:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch the repositories for a github user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">repositories</span><span class="p">(</span><span class="n">forOwner</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>owner</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The github username or ID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Either a Meta&lt;[Repository]&gt; or a TravisError</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L27-L30">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC16userRepositoriesyy6ResultADOyAA4MetaVySayAA10RepositoryVGGAA0A5ErrorOGc10completion_tF"></a>
+                    <a name="//apple_ref/swift/Method/userRepositories(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC16userRepositoriesyy6ResultADOyAA4MetaVySayAA10RepositoryVGGAA0A5ErrorOGc10completion_tF">userRepositories(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch the repositories for the current user</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRepositories</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Either a Meta&lt;[Repository]&gt; or a TravisError</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L35-L38">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Active"></a>
+                <a name="//apple_ref/swift/Section/Active" class="dashAnchor"></a>
+                <a href="#/Active">
+                  <h3 class="section-name">Active</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC16userActiveBuildsyy6ResultADOyAA4MetaVySayAA5BuildVGGAA0A5ErrorOGc10completion_tF"></a>
+                    <a name="//apple_ref/swift/Method/userActiveBuilds(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC16userActiveBuildsyy6ResultADOyAA4MetaVySayAA5BuildVGGAA0A5ErrorOGc10completion_tF">userActiveBuilds(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch the active builds for the current user</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userActiveBuilds</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Either a Meta&lt;[Build]&gt; or a TravisError</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L45-L48">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Jobs"></a>
+                <a name="//apple_ref/swift/Section/Jobs" class="dashAnchor"></a>
+                <a href="#/Jobs">
+                  <h3 class="section-name">Jobs</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC4jobsySS8forBuild_y6ResultAEOyAA4MetaVySayAA3JobVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/jobs(forBuild:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC4jobsySS8forBuild_y6ResultAEOyAA4MetaVySayAA3JobVGGAA0A5ErrorOGc10completiontF">jobs(forBuild:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">jobs</span><span class="p">(</span><span class="n">forBuild</span> <span class="nv">identfier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Job.html">Job</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L52-L55">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC3jobySS14withIdentifier_y6ResultAEOyAA4MetaVyAA3JobVGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/job(withIdentifier:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC3jobySS14withIdentifier_y6ResultAEOyAA4MetaVyAA3JobVGAA0A5ErrorOGc10completiontF">job(withIdentifier:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">job</span><span class="p">(</span><span class="n">withIdentifier</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Job.html">Job</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L57-L60">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Branches"></a>
+                <a name="//apple_ref/swift/Section/Branches" class="dashAnchor"></a>
+                <a href="#/Branches">
+                  <h3 class="section-name">Branches</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC8branchesySS8forBuild_y6ResultAEOyAA4MetaVySayAA6BranchVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/branches(forBuild:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC8branchesySS8forBuild_y6ResultAEOyAA4MetaVySayAA6BranchVGGAA0A5ErrorOGc10completiontF">branches(forBuild:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">branches</span><span class="p">(</span><span class="n">forBuild</span> <span class="nv">identfier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Branch.html">Branch</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L66-L69">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC6branchySS7forRepo_SS14withIdentifiery6ResultAFOyAA4MetaVyAA6BranchVGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/branch(forRepo:withIdentifier:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC6branchySS7forRepo_SS14withIdentifiery6ResultAFOyAA4MetaVyAA6BranchVGAA0A5ErrorOGc10completiontF">branch(forRepo:withIdentifier:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">branch</span><span class="p">(</span><span class="n">forRepo</span> <span class="nv">repoIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                   <span class="n">withIdentifier</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                   <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Branch.html">Branch</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L71-L76">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Repository"></a>
+                <a name="//apple_ref/swift/Section/Repository" class="dashAnchor"></a>
+                <a href="#/Repository">
+                  <h3 class="section-name">Repository</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC10repositoryySS_y6ResultADOyAA4MetaVyAA10RepositoryVGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/repository(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC10repositoryySS_y6ResultADOyAA4MetaVyAA10RepositoryVGAA0A5ErrorOGc10completiontF">repository(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">repository</span><span class="p">(</span><span class="n">_</span> <span class="nv">idOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L80-L83">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC18activateRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/activateRepository(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC18activateRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF">activateRepository(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">activateRepository</span><span class="p">(</span><span class="n">_</span> <span class="nv">idOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L85-L88">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC20deactivateRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/deactivateRepository(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC20deactivateRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF">deactivateRepository(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deactivateRepository</span><span class="p">(</span><span class="n">_</span> <span class="nv">idOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L90-L93">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC14starRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/starRepository(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC14starRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF">starRepository(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">starRepository</span><span class="p">(</span><span class="n">_</span> <span class="nv">idOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L95-L98">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC16unstarRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/unstarRepository(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC16unstarRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF">unstarRepository(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unstarRepository</span><span class="p">(</span><span class="n">_</span> <span class="nv">idOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L100-L103">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Builds"></a>
+                <a name="//apple_ref/swift/Section/Builds" class="dashAnchor"></a>
+                <a href="#/Builds">
+                  <h3 class="section-name">Builds</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC10userBuildsyy6ResultADOyAA4MetaVySayAA5BuildVGGAA0A5ErrorOGc10completion_tF"></a>
+                    <a name="//apple_ref/swift/Method/userBuilds(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC10userBuildsyy6ResultADOyAA4MetaVySayAA5BuildVGGAA0A5ErrorOGc10completion_tF">userBuilds(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userBuilds</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L107-L110">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC6buildsySS13forRepository_y6ResultAEOyAA4MetaVySayAA5BuildVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/builds(forRepository:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC6buildsySS13forRepository_y6ResultAEOyAA4MetaVySayAA5BuildVGGAA0A5ErrorOGc10completiontF">builds(forRepository:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">builds</span><span class="p">(</span><span class="n">forRepository</span> <span class="nv">repoIdOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L112-L115">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC3logySS6forJob_y6ResultAEOyAA4MetaVyAA3LogVGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/log(forJob:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC3logySS6forJob_y6ResultAEOyAA4MetaVyAA3LogVGAA0A5ErrorOGc10completiontF">log(forJob:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">log</span><span class="p">(</span><span class="n">forJob</span> <span class="nv">jobIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Log.html">Log</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L117-L120">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Build"></a>
+                <a name="//apple_ref/swift/Section/Build" class="dashAnchor"></a>
+                <a href="#/Build">
+                  <h3 class="section-name">Build</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC5buildySS10identifier_y6ResultAEOyAA4MetaVyAA5BuildVGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/build(identifier:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC5buildySS10identifier_y6ResultAEOyAA4MetaVyAA5BuildVGAA0A5ErrorOGc10completiontF">build(identifier:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">build</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L124-L127">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC12restartBuildySS10identifier_y6ResultAEOyAA6ActionVyAA07MinimalD0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/restartBuild(identifier:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC12restartBuildySS10identifier_y6ResultAEOyAA6ActionVyAA07MinimalD0VGAA0A5ErrorOGc10completiontF">restartBuild(identifier:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">restartBuild</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">ActionCompletion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/MinimalBuild.html">MinimalBuild</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L129-L132">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC11cancelBuildySS10identifier_y6ResultAEOyAA4MetaVyAA07MinimalD0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/cancelBuild(identifier:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC11cancelBuildySS10identifier_y6ResultAEOyAA4MetaVyAA07MinimalD0VGAA0A5ErrorOGc10completiontF">cancelBuild(identifier:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">cancelBuild</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/MinimalBuild.html">MinimalBuild</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L134-L137">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Env%20variables"></a>
+                <a name="//apple_ref/swift/Section/Env variables" class="dashAnchor"></a>
+                <a href="#/Env%20variables">
+                  <h3 class="section-name">Env variables</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC20environmentVariablesySS13forRepository_y6ResultAEOyAA4MetaVySayAA19EnvironmentVariableVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/environmentVariables(forRepository:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC20environmentVariablesySS13forRepository_y6ResultAEOyAA4MetaVySayAA19EnvironmentVariableVGGAA0A5ErrorOGc10completiontF">environmentVariables(forRepository:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">environmentVariables</span><span class="p">(</span><span class="n">forRepository</span> <span class="nv">repoIdOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/EnvironmentVariable.html">EnvironmentVariable</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L141-L144">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC6createyAA26EnvironmentVariableRequestV_SS13forRepositoryy6ResultAGOyAA4MetaVyAA0dE0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/create(_:forRepository:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC6createyAA26EnvironmentVariableRequestV_SS13forRepositoryy6ResultAGOyAA4MetaVyAA0dE0VGAA0A5ErrorOGc10completiontF">create(_:forRepository:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">create</span><span class="p">(</span><span class="n">_</span> <span class="nv">env</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:12TravisClient26EnvironmentVariableRequestV">EnvironmentVariableRequest</a></span><span class="p">,</span>
+                   <span class="n">forRepository</span> <span class="nv">repoIdOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                   <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/EnvironmentVariable.html">EnvironmentVariable</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L146-L153">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC6updateyAA26EnvironmentVariableRequestV_SS011environmentE10IdentifierSS13forRepositoryy6ResultAHOyAA4MetaVyAA0dE0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/update(_:environmentVariableIdentifier:forRepository:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC6updateyAA26EnvironmentVariableRequestV_SS011environmentE10IdentifierSS13forRepositoryy6ResultAHOyAA4MetaVyAA0dE0VGAA0A5ErrorOGc10completiontF">update(_:environmentVariableIdentifier:forRepository:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">_</span> <span class="nv">env</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:12TravisClient26EnvironmentVariableRequestV">EnvironmentVariableRequest</a></span><span class="p">,</span>
+                   <span class="nv">environmentVariableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                   <span class="n">forRepository</span> <span class="nv">repoIdOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                   <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/EnvironmentVariable.html">EnvironmentVariable</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L155-L161">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC6deleteySS29environmentVariableIdentifier_SS13forRepositoryy6ResultAFOyAA4MetaVyAA011EnvironmentE0VGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/delete(environmentVariableIdentifier:forRepository:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC6deleteySS29environmentVariableIdentifier_SS13forRepositoryy6ResultAFOyAA4MetaVyAA011EnvironmentE0VGAA0A5ErrorOGc10completiontF">delete(environmentVariableIdentifier:forRepository:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">delete</span><span class="p">(</span><span class="nv">environmentVariableIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                   <span class="n">forRepository</span> <span class="nv">repoIdOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                   <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/EnvironmentVariable.html">EnvironmentVariable</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L163-L168">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Settings"></a>
+                <a name="//apple_ref/swift/Section/Settings" class="dashAnchor"></a>
+                <a href="#/Settings">
+                  <h3 class="section-name">Settings</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC8settingsySS13forRepository_y6ResultAEOyAA4MetaVySayAA7SettingVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/settings(forRepository:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC8settingsySS13forRepository_y6ResultAEOyAA4MetaVySayAA7SettingVGGAA0A5ErrorOGc10completiontF">settings(forRepository:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">settings</span><span class="p">(</span><span class="n">forRepository</span> <span class="nv">repoIdOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                     <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Setting.html">Setting</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L172-L176">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Links"></a>
+                <a name="//apple_ref/swift/Section/Links" class="dashAnchor"></a>
+                <a href="#/Links">
+                  <h3 class="section-name">Links</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC6followyAA5EmbedVyxG5embed_y6ResultAHOyAA4MetaVy4FullAA7MinimalPQzGAA0A5ErrorOGc10completionts9DecodableRzs9EncodableRzAaMRzlF"></a>
+                    <a name="//apple_ref/swift/Method/follow(embed:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC6followyAA5EmbedVyxG5embed_y6ResultAHOyAA4MetaVy4FullAA7MinimalPQzGAA0A5ErrorOGc10completionts9DecodableRzs9EncodableRzAaMRzlF">follow(embed:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">follow</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:12TravisClient7MinimalP">Minimal</a></span><span class="o">&gt;</span><span class="p">(</span><span class="nv">embed</span><span class="p">:</span> <span class="kt"><a href="../Structs/Embed.html">Embed</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">.</span><span class="kt">Full</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L180-L184">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC17makeConfigurationSo010URLSessionD0CSS9withToken_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/makeConfiguration(withToken:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC17makeConfigurationSo010URLSessionD0CSS9withToken_tFZ">makeConfiguration(withToken:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">makeConfiguration</span><span class="p">(</span><span class="n">withToken</span> <span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionConfiguration</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/iainsmith/TravisClient/Sources/Sources/TravisClient/Client.swift#L227-L236">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Iain Smith</a>. All rights reserved. (Last updated: 2018-04-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

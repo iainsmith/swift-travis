@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TravisClient  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="TravisClient  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">TravisClient Docs</a> (55% documented)</p>
+        <p class="header-right"><a href="https://github.com/iainsmith/TravisClient"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">TravisClient Reference</a>
+        <img id="carat" src="img/carat.png" />
+        TravisClient  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/TravisClient.html">TravisClient</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/TravisEndpoint.html">TravisEndpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TravisError.html">TravisError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:12TravisClient7MinimalP">Minimal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ObjectSubscriptable.html">ObjectSubscriptable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Action.html">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Branch.html">Branch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Build.html">Build</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Embed.html">Embed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/EnvironmentVariable.html">EnvironmentVariable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:12TravisClient26EnvironmentVariableRequestV">EnvironmentVariableRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Job.html">Job</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Log.html">Log</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Meta.html">Meta</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MinimalBranch.html">MinimalBranch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MinimalBuild.html">MinimalBuild</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MinimalCommit.html">MinimalCommit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MinimalEnvironmentVariable.html">MinimalEnvironmentVariable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MinimalJob.html">MinimalJob</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MinimalRepository.html">MinimalRepository</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Pagination.html">Pagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Repository.html">Repository</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Setting.html">Setting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Setting/Value.html">– Value</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/TravisErrorMessage.html">TravisErrorMessage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='travisclient' class='heading'>TravisClient</h1>
+
+<p>A Travis v3 API client for Swift 4.x</p>
+<h2 id='browse-the-docs' class='heading'>Browse the docs</h2>
+<h2 id='usage' class='heading'>Usage</h2>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"YOUR_TRAVIS_API_KEY"</span>
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">TravisClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="nv">host</span><span class="p">:</span> <span class="o">.</span><span class="n">org</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">activeBuilds</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">Meta</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Build</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">builds</span><span class="p">):</span>
+        <span class="c1">// Find the number of active builds</span>
+        <span class="n">builds</span><span class="p">[\</span><span class="o">.</span><span class="n">count</span><span class="p">])</span>
+
+        <span class="c1">// Find the jobs associated with this build</span>
+        <span class="k">let</span> <span class="nv">jobs</span><span class="p">:</span> <span class="p">[</span><span class="kt">Embed</span><span class="o">&lt;</span><span class="kt">MinimalJob</span><span class="o">&gt;</span><span class="p">]</span> <span class="o">=</span> <span class="n">builds</span><span class="p">[\</span><span class="o">.</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">jobs</span><span class="p">]</span> <span class="c1">// in prod you should typically use [\.first?.jobs]</span>
+
+        <span class="c1">// Travis </span>
+        <span class="k">let</span> <span class="nv">job</span><span class="p">:</span> <span class="kt">Embed</span><span class="o">&lt;</span><span class="kt">MinimalJob</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">jobs</span><span class="p">[\</span><span class="o">.</span><span class="n">first</span><span class="p">]</span>
+
+        <span class="c1">// The travis api client support hyper media so you can easily load the full object in a second request.</span>
+        <span class="n">client</span><span class="o">.</span><span class="nf">follow</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="nv">jobResult</span><span class="p">:</span> <span class="kt">Meta</span><span class="o">&lt;</span><span class="kt">Commit</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">jobResult</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="k">case</span> <span class="nf">error</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+        <span class="c1">// handle error</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='running-the-tests' class='heading'>Running the tests</h2>
+<pre class="highlight shell"><code><span class="c"># JSON parsing tests</span>
+<span class="o">&gt;</span> swift <span class="nb">test</span> <span class="nt">--filter</span> TravisClientTests.JSONTests
+
+<span class="c"># Hit the travis.org API  </span>
+<span class="o">&gt;</span> <span class="nv">TRAVIS_TOKEN</span><span class="o">=</span>YOUR_TOKEN_HERE swift <span class="nb">test</span>
+</code></pre>
+<h2 id='todo' class='heading'>TODO</h2>
+
+<p>[ ] Support paginated requests
+[ ] Add Stage
+[ ] Add Owner
+[ ] Add Query parameters
+[ ] Support Type safe Eager Loading.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Iain Smith</a>. All rights reserved. (Last updated: 2018-04-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
