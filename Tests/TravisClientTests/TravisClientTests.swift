@@ -54,8 +54,8 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.jobs(forBuild: "365367401") { [weak self] result in
             if case let .success(jobs) = result {
-                let firstBuild = \[Job][0].build
-                let build = jobs[firstBuild]
+                let firstBuild = \[Job].first?.build
+                guard let build = jobs[firstBuild] else { return }
                 self?.client.follow(embed: build) { result in
                     if case let .success(build) = result {
                         XCTAssertEqual(build[\.id], 365_367_401)
@@ -113,7 +113,7 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.settings(forRepository: "iainsmith/SwiftGherkin") { result in
             if case let .success(settings) = result {
-                XCTAssertEqual(settings[\[Setting][0].name], "builds_only_with_travis_yml")
+                XCTAssertEqual(settings[\[Setting].first?.name], "builds_only_with_travis_yml")
                 exp.fulfill()
             } else {
                 XCTFail()

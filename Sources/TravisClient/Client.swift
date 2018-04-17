@@ -1,7 +1,6 @@
 import Foundation
 @_exported import Result
 
-@available(OSX 10.12, *)
 public class TravisClient {
     let session: URLSession
     let travis: TravisCloud
@@ -126,18 +125,20 @@ public class TravisClient {
         request(url, completion: completion)
     }
 
-    public func create(_: EnvironmentVariableRequest,
+    public func create(_ env: EnvironmentVariableRequest,
                        forRepository repoIdOrSlug: String,
                        completion: @escaping Completion<EnvironmentVariable>) {
-        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars", method: .post)
+        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars",
+            method: .post,
+            encodable: env)
         request(url, completion: completion)
     }
 
-    public func update(_: EnvironmentVariableRequest,
+    public func update(_ env: EnvironmentVariableRequest,
                        environmentVariableIdentifier: String,
                        forRepository repoIdOrSlug: String,
                        completion: @escaping Completion<EnvironmentVariable>) {
-        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_var/\(environmentVariableIdentifier)", method: .patch)
+        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_var/\(environmentVariableIdentifier)", method: .patch, encodable: env)
         request(url, completion: completion)
     }
 
@@ -183,7 +184,10 @@ public class TravisClient {
             }
 
             let jsonDecoder = JSONDecoder()
-            jsonDecoder.dateDecodingStrategy = .iso8601
+            if #available(OSX 10.12, *) {
+                jsonDecoder.dateDecodingStrategy = .iso8601
+            }
+
             do {
                 let result = try jsonDecoder.decode(T.self, from: someData)
                 onMain(completion: completion, result: .init(result))
@@ -201,7 +205,6 @@ public class TravisClient {
     }
 }
 
-@available(OSX 10.12, *)
 extension TravisClient {
     public static func makeConfiguration(withToken token: String) -> URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default
@@ -215,8 +218,13 @@ extension TravisClient {
     }
 }
 
-@available(OSX 10.12, *)
 extension TravisClient {
+    func makeURL<T: Encodable>(path: String, query: [URLQueryItem]? = nil, method: HTTPMethod = .get, encodable: T) -> URLRequest {
+        var request = makeURL(path: path, query: query, method: method)
+        request.httpBody = try? JSONEncoder().encode(encodable)
+        return request
+    }
+
     func makeURL(path: String, query: [URLQueryItem]? = nil, method: HTTPMethod = .get) -> URLRequest {
         var components = URLComponents()
         components.scheme = "https"
@@ -226,9 +234,6 @@ extension TravisClient {
 
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.method
-//        if case let .post(encodable) = method {
-//            request.httpBody = try? JSONEncoder().encode(encodable)
-//        }
         return request
     }
 }
