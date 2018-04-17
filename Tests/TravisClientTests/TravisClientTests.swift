@@ -15,7 +15,8 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.userBuilds { result in
             if case let .success(builds) = result {
-                let build = builds[\[Build].first?.commit[\.message]]
+                // Keypath segfaults on 4.0 for builds for some reason.
+                let build = builds.object.first
                 exp.fulfill()
             } else {
                 XCTFail()
