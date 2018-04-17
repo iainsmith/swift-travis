@@ -1,3 +1,4 @@
+/// The errors produced by TravisClient
 public enum TravisError: Error {
     case travis(TravisErrorMessage)
     case notPathEscapable
@@ -5,6 +6,7 @@ public enum TravisError: Error {
     case unableToDecode(error: Error)
 }
 
+/// The travis error message
 public struct TravisErrorMessage: Codable {
     public let type: String
     public let message: String

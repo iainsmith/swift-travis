@@ -1,22 +1,37 @@
 import Foundation
 @_exported import Result
 
+/// API Client for talking to the travis v3 api.
 public class TravisClient {
-    let session: URLSession
-    let travis: TravisCloud
+    private let session: URLSession
+    private let host: TravisEndpoint
 
-    public init(token: String, host: TravisCloud = .org, session: URLSession? = nil) {
-        travis = host
+    /// Create a TravisClient to interact with the API
+    ///
+    /// - Parameters:
+    ///   - token: Your travis api token
+    ///   - host: .org, .pro or .enterprise("custom.url")
+    ///   - session: Optional URLSession for dependency injection
+    public init(token: String, host: TravisEndpoint = .org, session: URLSession? = nil) {
+        self.host = host
         self.session = session ?? URLSession(configuration: TravisClient.makeConfiguration(withToken: token))
     }
 
     // MARK: Repositories
 
+    /// Fetch the repositories for a github user.
+    ///
+    /// - Parameters:
+    ///   - owner: The github username or ID
+    ///   - completion: Either a Meta<[Repository]> or a TravisError
     public func repositories(forOwner owner: String, completion: @escaping Completion<[Repository]>) {
         let url = makeURL(path: "/owner/\(owner.pathEscape())/repos")
         request(url, completion: completion)
     }
 
+    /// Fetch the repositories for the current user
+    ///
+    /// - Parameter completion: Either a Meta<[Repository]> or a TravisError
     public func userRepositories(completion: @escaping Completion<[Repository]>) {
         let url = makeURL(path: "/repos")
         request(url, completion: completion)
@@ -24,7 +39,10 @@ public class TravisClient {
 
     // MARK: Active
 
-    public func activeBuilds(completion: @escaping Completion<[Build]>) {
+    /// Fetch the active builds for the current user
+    ///
+    /// - Parameter completion: Either a Meta<[Build]> or a TravisError
+    public func userActiveBuilds(completion: @escaping Completion<[Build]>) {
         let url = makeURL(path: "/active")
         request(url, completion: completion)
     }
@@ -129,8 +147,8 @@ public class TravisClient {
                        forRepository repoIdOrSlug: String,
                        completion: @escaping Completion<EnvironmentVariable>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars",
-            method: .post,
-            encodable: env)
+                          method: .post,
+                          encodable: env)
         request(url, completion: completion)
     }
 
@@ -228,7 +246,7 @@ extension TravisClient {
     func makeURL(path: String, query: [URLQueryItem]? = nil, method: HTTPMethod = .get) -> URLRequest {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = travis.host
+        components.host = host.host
         components.percentEncodedPath = path
         components.queryItems = query
 

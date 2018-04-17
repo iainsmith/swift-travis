@@ -1,7 +1,27 @@
-public struct EnvironmentVariable: Codable {
+/// Included when the resource is returned as part of another resource
+public struct MinimalEnvironmentVariable: Codable {
+    /// The environment variable id
     public let id: String
+
+    /// The environment variable name, e.g. FOO
     public let name: String
+
+    /// The environment variable's value, e.g. bar
     public let value: String
+}
+
+/// Included when the resource is the main response of a request
+public struct EnvironmentVariable: Codable {
+    /// The environment variable id
+    public let id: String
+
+    /// The environment variable name, e.g. FOO
+    public let name: String
+
+    /// The environment variable's value, e.g. bar
+    public let value: String
+
+    /// Whether this environment variable should be publicly visible or not
     public let isPublic: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -12,12 +32,7 @@ public struct EnvironmentVariable: Codable {
     }
 }
 
-public struct MinimalEnvironmentVariable: Codable {
-    public let id: String
-    public let name: String
-    public let value: String
-}
-
+/// The data to be sent to travis to Create or Update an environment variable
 public struct EnvironmentVariableRequest: Codable {
     let name: String
     let value: String

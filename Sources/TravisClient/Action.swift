@@ -1,5 +1,6 @@
 import Foundation
 
+/// Meta information about an Action taken on the object.
 public struct Action<Object: Codable>: Codable, ObjectSubscriptable {
     public let type: String
     public let resourceType: String

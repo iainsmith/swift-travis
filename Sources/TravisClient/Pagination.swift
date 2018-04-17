@@ -1,3 +1,4 @@
+/// Pagination
 public struct Pagination: Codable {
     public let limit: Int
     public let offset: Int

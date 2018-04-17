@@ -1,3 +1,12 @@
+/// Included when the resource is returned as part of another resource
+public struct MinimalRepository: Codable, Minimal {
+    public let id: Int
+    public let name: String
+    public let slug: String
+
+    public typealias Full = Repository
+}
+
 public struct Repository: Codable {
     public let id: Int
     public let name: String
@@ -15,12 +24,4 @@ public struct Repository: Codable {
         case description
         case githubLanguage = "github_language"
     }
-}
-
-public struct MinimalRepository: Codable, Minimal {
-    public let id: Int
-    public let name: String
-    public let slug: String
-
-    public typealias Full = Repository
 }

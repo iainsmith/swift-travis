@@ -1,4 +1,5 @@
-public enum TravisCloud {
+/// The Traivs
+public enum TravisEndpoint {
     case pro
     case org
     case enterprise(String)

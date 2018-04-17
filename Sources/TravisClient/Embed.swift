@@ -1,3 +1,5 @@
+/// Minimal Representations are embbeded into the main object returned from the API.
+/// The Embed object contains the meta data
 public struct Embed<T: Codable>: Codable, ObjectSubscriptable {
     public let type: String
     public let path: String?
