@@ -133,8 +133,12 @@
 <p>A Travis v3 API client for Swift 4.x</p>
 
 <p><a href="https://travis-ci.org/iainsmith/TravisClient"><img src="https://travis-ci.org/iainsmith/TravisClient.svg?branch=master" alt="Build Status"></a></p>
+
+<p><a href="https://iainsmith.github.io/TravisClient/index.html">Read the docs</a></p>
 <h2 id='usage' class='heading'>Usage</h2>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"YOUR_TRAVIS_API_KEY"</span>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">TravisClient</span>
+
+<span class="k">let</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"YOUR_TRAVIS_API_KEY"</span>
 <span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">TravisClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="nv">host</span><span class="p">:</span> <span class="o">.</span><span class="n">org</span><span class="p">)</span>
 
 <span class="n">client</span><span class="o">.</span><span class="n">activeBuilds</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">Meta</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Build</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
@@ -169,11 +173,13 @@
 </code></pre>
 <h2 id='todo' class='heading'>TODO</h2>
 
-<p>[ ] Support paginated requests
-[ ] Add Stage
-[ ] Add Owner
-[ ] Add Query parameters
-[ ] Support Type safe Eager Loading.</p>
+<ul>
+<li>[ ] Support paginated requests</li>
+<li>[ ] Add Stage</li>
+<li>[ ] Add Owner</li>
+<li>[ ] Add Query parameters</li>
+<li>[ ] Support Type safe Eager Loading.</li>
+</ul>
 
           </section>
         </section>

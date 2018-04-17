@@ -11,6 +11,8 @@ A Travis v3 API client for Swift 4.x
 ## Usage
 
 ```swift
+import TravisClient
+
 let key: String = "YOUR_TRAVIS_API_KEY"
 let client = TravisClient(token: key, host: .org)
 
