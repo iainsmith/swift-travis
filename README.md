@@ -4,6 +4,10 @@ A Travis v3 API client for Swift 4.x
 
 [![Build Status](https://travis-ci.org/iainsmith/TravisClient.svg?branch=master)](https://travis-ci.org/iainsmith/TravisClient)
 
+##
+
+[Read the docs](https://iainsmith.github.io/TravisClient/index.html)
+
 ## Usage
 
 ```swift
@@ -46,8 +50,8 @@ client.activeBuilds { (result: Meta<[Build]>) in
 
 ## TODO
 
-[ ] Support paginated requests
-[ ] Add Stage
-[ ] Add Owner
-[ ] Add Query parameters
-[ ] Support Type safe Eager Loading.
+* [ ] Support paginated requests
+* [ ] Add Stage
+* [ ] Add Owner
+* [ ] Add Query parameters
+* [ ] Support Type safe Eager Loading.
