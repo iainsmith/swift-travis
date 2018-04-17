@@ -1,0 +1,40 @@
+{
+  "@type": "repository",
+  "@href": "/repo/18391368",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "create_env_var": true,
+    "create_key_pair": true,
+    "delete_key_pair": true,
+    "create_request": true,
+    "admin": true,
+    "activate": true,
+    "deactivate": true,
+    "star": true,
+    "unstar": true,
+    "create_cron": true
+  },
+  "id": 18391368,
+  "name": "SwiftGherkin",
+  "slug": "iainsmith/SwiftGherkin",
+  "description": "A Swift package for working with Gherkin (Cucumber) feature files.",
+  "github_language": null,
+  "active": true,
+  "private": false,
+  "owner": {
+    "@type": "user",
+    "id": 24530,
+    "login": "iainsmith",
+    "@href": "/user/24530"
+  },
+  "default_branch": {
+    "@type": "branch",
+    "@href": "/repo/18391368/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "starred": false,
+  "managed_by_installation": false,
+  "active_on_org": null
+}

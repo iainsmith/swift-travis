@@ -1,0 +1,20 @@
+{
+  "@type": "pending",
+  "build": {
+    "@type": "build",
+    "@href": "/build/359741180",
+    "@representation": "minimal",
+    "id": 359741180,
+    "number": "25",
+    "state": "canceled",
+    "duration": 0,
+    "event_type": "push",
+    "previous_state": "passed",
+    "pull_request_title": null,
+    "pull_request_number": null,
+    "started_at": null,
+    "finished_at": "2018-04-14T22:00:17Z"
+  },
+  "state_change": "restart",
+  "resource_type": "build"
+}

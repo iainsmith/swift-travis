@@ -1,0 +1,1784 @@
+{
+  "@type": "builds",
+  "@href": "/repo/iainsmith%2FSwiftGherkin/builds",
+  "@representation": "standard",
+  "@pagination": {
+    "limit": 25,
+    "offset": 0,
+    "count": 49,
+    "is_first": true,
+    "is_last": false,
+    "next": {
+      "@href": "/repo/iainsmith%2FSwiftGherkin/builds?limit=25&offset=25",
+      "offset": 25,
+      "limit": 25
+    },
+    "prev": null,
+    "first": {
+      "@href": "/repo/iainsmith%2FSwiftGherkin/builds",
+      "offset": 0,
+      "limit": 25
+    },
+    "last": {
+      "@href": "/repo/iainsmith%2FSwiftGherkin/builds?limit=25&offset=25",
+      "offset": 25,
+      "limit": 25
+    }
+  },
+  "builds": [
+    {
+      "@type": "build",
+      "@href": "/build/364862517",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 364862517,
+      "number": "49",
+      "state": "passed",
+      "duration": 535,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-10T22:55:15Z",
+      "finished_at": "2018-04-10T22:58:33Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/master",
+        "@representation": "minimal",
+        "name": "master"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108868456,
+        "sha": "5a241806d6a6ee4e392d0849c985f87d98d9b0fe",
+        "ref": "refs/heads/master",
+        "message": "Update `Files` to support Swift 4.0 on Linux",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/298f2aa73309...5a241806d6a6",
+        "committed_at": "2018-04-10T22:49:00Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/364862518",
+          "@representation": "minimal",
+          "id": 364862518
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364862519",
+          "@representation": "minimal",
+          "id": 364862519
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364862520",
+          "@representation": "minimal",
+          "id": 364862520
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364862521",
+          "@representation": "minimal",
+          "id": 364862521
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-10T22:58:33.725Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/364860807",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 364860807,
+      "number": "48",
+      "state": "passed",
+      "duration": 488,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-10T22:49:45Z",
+      "finished_at": "2018-04-10T22:52:56Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/update-files",
+        "@representation": "minimal",
+        "name": "update-files"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108867921,
+        "sha": "5a241806d6a6ee4e392d0849c985f87d98d9b0fe",
+        "ref": "refs/heads/update-files",
+        "message": "Update `Files` to support Swift 4.0 on Linux",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/d71d3c842147...5a241806d6a6",
+        "committed_at": "2018-04-10T22:49:00Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/364860808",
+          "@representation": "minimal",
+          "id": 364860808
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364860809",
+          "@representation": "minimal",
+          "id": 364860809
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364860810",
+          "@representation": "minimal",
+          "id": 364860810
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364860811",
+          "@representation": "minimal",
+          "id": 364860811
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-10T22:52:56.722Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/364857487",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 364857487,
+      "number": "47",
+      "state": "passed",
+      "duration": 505,
+      "event_type": "push",
+      "previous_state": "failed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-10T22:38:08Z",
+      "finished_at": "2018-04-10T22:41:38Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/update-files",
+        "@representation": "minimal",
+        "name": "update-files"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108866892,
+        "sha": "d71d3c842147c21300dcdd20b08c090f186e2af5",
+        "ref": "refs/heads/update-files",
+        "message": "Bump Files",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/fec050a36b7a...d71d3c842147",
+        "committed_at": "2018-04-10T22:37:25Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/364857488",
+          "@representation": "minimal",
+          "id": 364857488
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364857489",
+          "@representation": "minimal",
+          "id": 364857489
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364857491",
+          "@representation": "minimal",
+          "id": 364857491
+        },
+        {
+          "@type": "job",
+          "@href": "/job/364857492",
+          "@representation": "minimal",
+          "id": 364857492
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-10T22:41:38.506Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363989172",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363989172,
+      "number": "46",
+      "state": "failed",
+      "duration": 495,
+      "event_type": "push",
+      "previous_state": null,
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-10T22:34:13Z",
+      "finished_at": "2018-04-10T22:37:28Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/update-files",
+        "@representation": "minimal",
+        "name": "update-files"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108593186,
+        "sha": "fec050a36b7a946fb8e07b4b336b764732e41a39",
+        "ref": "refs/heads/update-files",
+        "message": "Update Files",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/commit/fec050a36b7a",
+        "committed_at": "2018-04-09T07:09:52Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363989174",
+          "@representation": "minimal",
+          "id": 363989174
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363989176",
+          "@representation": "minimal",
+          "id": 363989176
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363989177",
+          "@representation": "minimal",
+          "id": 363989177
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363989178",
+          "@representation": "minimal",
+          "id": 363989178
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-10T22:37:28.767Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363912314",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363912314,
+      "number": "45",
+      "state": "passed",
+      "duration": 477,
+      "event_type": "push",
+      "previous_state": "failed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-09T00:02:51Z",
+      "finished_at": "2018-04-09T00:06:00Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/master",
+        "@representation": "minimal",
+        "name": "master"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108566626,
+        "sha": "298f2aa733099ea930c8974a5a39ec8831b0ff27",
+        "ref": "refs/heads/master",
+        "message": "Run CI on Linux & MacOS against Swift 4.0 & 4.1. ❌ Linux 4.1\n\nConsumer currently doesn't build against Swift 4.1. Disabling code\ncoverage tracking for the time being as I'd rather check Linux &\nmultiple versions of swift.",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/b3b01d37c313...298f2aa73309",
+        "committed_at": "2018-04-09T00:02:08Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363912315",
+          "@representation": "minimal",
+          "id": 363912315
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363912316",
+          "@representation": "minimal",
+          "id": 363912316
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363912317",
+          "@representation": "minimal",
+          "id": 363912317
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363912318",
+          "@representation": "minimal",
+          "id": 363912318
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-09T00:06:00.661Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363911050",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363911050,
+      "number": "44",
+      "state": "failed",
+      "duration": 483,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T23:57:14Z",
+      "finished_at": "2018-04-09T00:00:32Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/master",
+        "@representation": "minimal",
+        "name": "master"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108566270,
+        "sha": "b3b01d37c313e26c7dae60122b400df36ae17f26",
+        "ref": "refs/heads/master",
+        "message": "Run CI on Linux & MacOS against Swift 4.0 & 4.1. ❌ Linux 4.1\n\nConsumer currently doesn't build against Swift 4.1. Disabling code\ncoverage tracking for the time being as I'd rather check Linux &\nmultiple versions of swift.",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/4a8e85a1e838...b3b01d37c313",
+        "committed_at": "2018-04-08T23:38:12Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363911051",
+          "@representation": "minimal",
+          "id": 363911051
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363911052",
+          "@representation": "minimal",
+          "id": 363911052
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363911053",
+          "@representation": "minimal",
+          "id": 363911053
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363911054",
+          "@representation": "minimal",
+          "id": 363911054
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-09T00:00:33.147Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363903041",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363903041,
+      "number": "43",
+      "state": "passed",
+      "duration": 522,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T23:14:49Z",
+      "finished_at": "2018-04-08T23:17:56Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108563852,
+        "sha": "e393fe187d72b2da93995847e7fc71db37fcdc61",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "Tidy up",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/7875f26a5de3...e393fe187d72",
+        "committed_at": "2018-04-08T23:14:13Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363903042",
+          "@representation": "minimal",
+          "id": 363903042
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363903043",
+          "@representation": "minimal",
+          "id": 363903043
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363903044",
+          "@representation": "minimal",
+          "id": 363903044
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363903045",
+          "@representation": "minimal",
+          "id": 363903045
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T23:17:57.027Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363902162",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363902162,
+      "number": "42",
+      "state": "passed",
+      "duration": 478,
+      "event_type": "push",
+      "previous_state": "failed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T23:10:12Z",
+      "finished_at": "2018-04-08T23:13:25Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108563559,
+        "sha": "7875f26a5de37fc3b587804e0f001786763a6994",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "Allow failures on 4.1 linux",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/a08bb6c13ca5...7875f26a5de3",
+        "committed_at": "2018-04-08T23:09:35Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363902163",
+          "@representation": "minimal",
+          "id": 363902163
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363902164",
+          "@representation": "minimal",
+          "id": 363902164
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363902165",
+          "@representation": "minimal",
+          "id": 363902165
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363902166",
+          "@representation": "minimal",
+          "id": 363902166
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T23:13:25.721Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363900994",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363900994,
+      "number": "41",
+      "state": "failed",
+      "duration": 467,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T23:04:03Z",
+      "finished_at": "2018-04-08T23:07:17Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108563188,
+        "sha": "a08bb6c13ca575de6b9a071f6505f6e4ab02d409",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "Setup matrix",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/1804865e46e1...a08bb6c13ca5",
+        "committed_at": "2018-04-08T23:03:26Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363900995",
+          "@representation": "minimal",
+          "id": 363900995
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363900996",
+          "@representation": "minimal",
+          "id": 363900996
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363900997",
+          "@representation": "minimal",
+          "id": 363900997
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363900998",
+          "@representation": "minimal",
+          "id": 363900998
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T23:07:17.209Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363898725",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363898725,
+      "number": "40",
+      "state": "passed",
+      "duration": 220,
+      "event_type": "push",
+      "previous_state": "errored",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T22:54:22Z",
+      "finished_at": "2018-04-08T22:56:29Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108562575,
+        "sha": "1804865e46e1413b9c05f3af63c0b2a0870ff84b",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "Bump",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/73f2a3936c25...1804865e46e1",
+        "committed_at": "2018-04-08T22:53:45Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363898726",
+          "@representation": "minimal",
+          "id": 363898726
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363898727",
+          "@representation": "minimal",
+          "id": 363898727
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T22:56:29.547Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363898009",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363898009,
+      "number": "39",
+      "state": "errored",
+      "duration": 134,
+      "event_type": "push",
+      "previous_state": "errored",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T22:50:43Z",
+      "finished_at": "2018-04-08T22:52:47Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108562371,
+        "sha": "73f2a3936c25467a693139ae9dbbe84b08d7e785",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "Reference tests",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/2adaaa07db6c...73f2a3936c25",
+        "committed_at": "2018-04-08T22:50:04Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363898010",
+          "@representation": "minimal",
+          "id": 363898010
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363898011",
+          "@representation": "minimal",
+          "id": 363898011
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T22:52:47.210Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363896521",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363896521,
+      "number": "38",
+      "state": "errored",
+      "duration": 128,
+      "event_type": "push",
+      "previous_state": "failed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T22:43:10Z",
+      "finished_at": "2018-04-08T22:45:07Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108561880,
+        "sha": "2adaaa07db6c8c5c85c47b953912087b41dec01a",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "Try compiling with swift 4.0",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/1b09a57767c2...2adaaa07db6c",
+        "committed_at": "2018-04-08T22:42:35Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363896522",
+          "@representation": "minimal",
+          "id": 363896522
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363896523",
+          "@representation": "minimal",
+          "id": 363896523
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T22:45:07.416Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363894685",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363894685,
+      "number": "37",
+      "state": "failed",
+      "duration": 271,
+      "event_type": "push",
+      "previous_state": "failed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T22:34:30Z",
+      "finished_at": "2018-04-08T22:37:30Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108561354,
+        "sha": "1b09a57767c2003b193dc19e468aaf19653ebf4a",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "install swift",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/0ebb18133aa3...1b09a57767c2",
+        "committed_at": "2018-04-08T22:33:36Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363894686",
+          "@representation": "minimal",
+          "id": 363894686
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363894687",
+          "@representation": "minimal",
+          "id": 363894687
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T22:37:31.020Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363893707",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363893707,
+      "number": "36",
+      "state": "failed",
+      "duration": 167,
+      "event_type": "push",
+      "previous_state": "failed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T22:29:55Z",
+      "finished_at": "2018-04-08T22:32:05Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108561034,
+        "sha": "0ebb18133aa39d59b267a5366c26d2177183cdae",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "prove linux tests run",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/baf3a5938590...0ebb18133aa3",
+        "committed_at": "2018-04-08T22:29:15Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363893708",
+          "@representation": "minimal",
+          "id": 363893708
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363893709",
+          "@representation": "minimal",
+          "id": 363893709
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T22:32:05.788Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/363892852",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 363892852,
+      "number": "35",
+      "state": "failed",
+      "duration": 198,
+      "event_type": "push",
+      "previous_state": null,
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-04-08T22:26:41Z",
+      "finished_at": "2018-04-08T22:29:10Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+        "@representation": "minimal",
+        "name": "feature/linux-tests"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 108560797,
+        "sha": "baf3a59385905b185eeeaabd3e6db7a70785049d",
+        "ref": "refs/heads/feature/linux-tests",
+        "message": "Add linux to travis",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/commit/baf3a5938590",
+        "committed_at": "2018-04-08T22:25:56Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/363892853",
+          "@representation": "minimal",
+          "id": 363892853
+        },
+        {
+          "@type": "job",
+          "@href": "/job/363892854",
+          "@representation": "minimal",
+          "id": 363892854
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-04-08T22:29:10.311Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/360214179",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 360214179,
+      "number": "34",
+      "state": "passed",
+      "duration": 111,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-30T10:14:24Z",
+      "finished_at": "2018-03-30T10:16:15Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/master",
+        "@representation": "minimal",
+        "name": "master"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107410603,
+        "sha": "4a8e85a1e838a68576f0524e5d563c2fd5ab0521",
+        "ref": "refs/heads/master",
+        "message": "Generate XCUITest code from a directory of .feature files\n\n* Add `syncTests` to generate a directory of test code from feature\nfiles",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/fc17eb1e35b3...4a8e85a1e838",
+        "committed_at": "2018-03-30T10:06:58Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/360214180",
+          "@representation": "minimal",
+          "id": 360214180
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-30T10:16:15.230Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/360212544",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 360212544,
+      "number": "33",
+      "state": "passed",
+      "duration": 112,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-30T10:08:23Z",
+      "finished_at": "2018-03-30T10:10:15Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/cli",
+        "@representation": "minimal",
+        "name": "cli"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107410128,
+        "sha": "4a8e85a1e838a68576f0524e5d563c2fd5ab0521",
+        "ref": "refs/heads/cli",
+        "message": "Generate XCUITest code from a directory of .feature files\n\n* Add `syncTests` to generate a directory of test code from feature\nfiles",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/e00e4fb9da97...4a8e85a1e838",
+        "committed_at": "2018-03-30T10:06:58Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/360212545",
+          "@representation": "minimal",
+          "id": 360212545
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-30T10:10:15.943Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/360212420",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 360212420,
+      "number": "32",
+      "state": "canceled",
+      "duration": 0,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": null,
+      "finished_at": "2018-03-30T10:07:18Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/cli",
+        "@representation": "minimal",
+        "name": "cli"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107410096,
+        "sha": "e00e4fb9da9726daea4467ea5fd563e388d135c9",
+        "ref": "refs/heads/cli",
+        "message": "Remove GherkinCLILib from products.",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/53ed145e4f5b...e00e4fb9da97",
+        "committed_at": "2018-03-30T10:06:38Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/360212421",
+          "@representation": "minimal",
+          "id": 360212421
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-30T10:07:18.429Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/360212382",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 360212382,
+      "number": "31",
+      "state": "passed",
+      "duration": 99,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-30T10:07:43Z",
+      "finished_at": "2018-03-30T10:09:22Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/master",
+        "@representation": "minimal",
+        "name": "master"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107410080,
+        "sha": "fc17eb1e35b36ebfb0c8de7fd8a3f0cc94d16953",
+        "ref": "refs/heads/master",
+        "message": "Use travis formatter for XCPretty",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/54ba1b954c82...fc17eb1e35b3",
+        "committed_at": "2018-03-30T10:03:18Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/360212383",
+          "@representation": "minimal",
+          "id": 360212383
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-30T10:09:22.692Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/360211840",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 360211840,
+      "number": "30",
+      "state": "passed",
+      "duration": 116,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-30T10:04:57Z",
+      "finished_at": "2018-03-30T10:06:53Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/cli",
+        "@representation": "minimal",
+        "name": "cli"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107409880,
+        "sha": "53ed145e4f5b20777c74ed53386888c2617cf218",
+        "ref": "refs/heads/cli",
+        "message": "Remove GherkinCLILib from products.",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/7c5ed4465cf7...53ed145e4f5b",
+        "committed_at": "2018-03-30T09:54:46Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/360211841",
+          "@representation": "minimal",
+          "id": 360211841
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-30T10:06:53.274Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/360211667",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 360211667,
+      "number": "29",
+      "state": "passed",
+      "duration": 91,
+      "event_type": "push",
+      "previous_state": null,
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-30T10:04:35Z",
+      "finished_at": "2018-03-30T10:06:06Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/xcpretty",
+        "@representation": "minimal",
+        "name": "xcpretty"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107409831,
+        "sha": "fc17eb1e35b36ebfb0c8de7fd8a3f0cc94d16953",
+        "ref": "refs/heads/xcpretty",
+        "message": "Use travis formatter for XCPretty",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/commit/fc17eb1e35b3",
+        "committed_at": "2018-03-30T10:03:18Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/360211668",
+          "@representation": "minimal",
+          "id": 360211668
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-30T10:06:06.974Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/360208653",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 360208653,
+      "number": "28",
+      "state": "passed",
+      "duration": 115,
+      "event_type": "push",
+      "previous_state": null,
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-30T09:53:08Z",
+      "finished_at": "2018-03-30T09:55:03Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/cli",
+        "@representation": "minimal",
+        "name": "cli"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107408831,
+        "sha": "7c5ed4465cf75c8300344a72831da933c13bc7b9",
+        "ref": "refs/heads/cli",
+        "message": "Generate XCUITest code from a directory of .feature files\n\n* Add `syncTests` to generate a directory of test code from feature\nfiles",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/fcd7cb5ddaf6^...7c5ed4465cf7",
+        "committed_at": "2018-03-30T09:50:01Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/360208654",
+          "@representation": "minimal",
+          "id": 360208654
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-30T09:55:03.178Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/360207687",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 360207687,
+      "number": "27",
+      "state": "passed",
+      "duration": 105,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-30T09:49:16Z",
+      "finished_at": "2018-03-30T09:51:01Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/master",
+        "@representation": "minimal",
+        "name": "master"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107408534,
+        "sha": "54ba1b954c82ae6763d9d3395c84d011e43df33f",
+        "ref": "refs/heads/master",
+        "message": "Add Scenario.name to tests",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/5cc09cb663c5...54ba1b954c82",
+        "committed_at": "2018-03-30T09:43:23Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/360207688",
+          "@representation": "minimal",
+          "id": 360207688
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-30T09:51:01.205Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/359744505",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 359744505,
+      "number": "26",
+      "state": "passed",
+      "duration": 98,
+      "event_type": "push",
+      "previous_state": null,
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-29T08:56:20Z",
+      "finished_at": "2018-03-29T08:57:58Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/0.1.0",
+        "@representation": "minimal",
+        "name": "0.1.0"
+      },
+      "tag": {
+        "@type": "tag",
+        "@representation": "minimal",
+        "repository_id": 18391368,
+        "name": "0.1.0",
+        "last_build_id": null
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107258281,
+        "sha": "5cc09cb663c5998ec2514efbfd47ef5d9ac8b11e",
+        "ref": "refs/tags/0.1.0",
+        "message": "Add Travis badge to readme",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/0.1.0",
+        "committed_at": null
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/359744506",
+          "@representation": "minimal",
+          "id": 359744506
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-29T08:57:58.081Z"
+    },
+    {
+      "@type": "build",
+      "@href": "/build/359741180",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": true,
+        "restart": true
+      },
+      "id": 359741180,
+      "number": "25",
+      "state": "passed",
+      "duration": 99,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2018-03-29T08:46:19Z",
+      "finished_at": "2018-03-29T08:47:58Z",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "branch": {
+        "@type": "branch",
+        "@href": "/repo/18391368/branch/master",
+        "@representation": "minimal",
+        "name": "master"
+      },
+      "tag": null,
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 107257312,
+        "sha": "5cc09cb663c5998ec2514efbfd47ef5d9ac8b11e",
+        "ref": "refs/heads/master",
+        "message": "Add Travis badge to readme",
+        "compare_url": "https://github.com/iainsmith/SwiftGherkin/compare/8bf950417aca...5cc09cb663c5",
+        "committed_at": "2018-03-29T08:45:01Z"
+      },
+      "jobs": [
+        {
+          "@type": "job",
+          "@href": "/job/359741181",
+          "@representation": "minimal",
+          "id": 359741181
+        }
+      ],
+      "stages": [],
+      "created_by": {
+        "@type": "user",
+        "@href": "/user/24530",
+        "@representation": "minimal",
+        "id": 24530,
+        "login": "iainsmith"
+      },
+      "updated_at": "2018-03-29T08:47:58.469Z"
+    }
+  ]
+}

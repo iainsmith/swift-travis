@@ -5,12 +5,11 @@
 //  Created by iainsmith on 17/04/2018.
 //
 
-import XCTest
 import TravisClient
+import XCTest
 
 let file = #file
 let path = URL(fileURLWithPath: NSString(string: file).deletingLastPathComponent.appending("/../../Samples"))
-
 
 @available(OSX 10.12, *)
 class JSONTests: XCTestCase {
@@ -51,7 +50,7 @@ class JSONTests: XCTestCase {
         url = path.appendingPathComponent("repo-activate.json")
         let result = try decoder.decode(Meta<Repository>.self, from: data)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result[\Repository.id], 18391368)
+        XCTAssertEqual(result[\Repository.id], 18_391_368)
     }
 
     func testRepoBranches() throws {
@@ -72,7 +71,7 @@ class JSONTests: XCTestCase {
         url = path.appendingPathComponent("job-log.json")
         let result = try decoder.decode(Meta<Log>.self, from: data)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result[\.id], 266982558)
+        XCTAssertEqual(result[\.id], 266_982_558)
         XCTAssertEqual(result[\.content].lengthOfBytes(using: .utf8), 36483)
     }
 

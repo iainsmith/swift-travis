@@ -1,0 +1,73 @@
+{
+  "@type": "settings",
+  "@href": "/repo/iainsmith%2FSwiftGherkin/settings",
+  "@representation": "standard",
+  "settings": [
+    {
+      "@type": "setting",
+      "@href": "/repo/18391368/setting/builds_only_with_travis_yml",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "write": true
+      },
+      "name": "builds_only_with_travis_yml",
+      "value": false
+    },
+    {
+      "@type": "setting",
+      "@href": "/repo/18391368/setting/build_pushes",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "write": true
+      },
+      "name": "build_pushes",
+      "value": true
+    },
+    {
+      "@type": "setting",
+      "@href": "/repo/18391368/setting/build_pull_requests",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "write": true
+      },
+      "name": "build_pull_requests",
+      "value": true
+    },
+    {
+      "@type": "setting",
+      "@href": "/repo/18391368/setting/maximum_number_of_builds",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "write": true
+      },
+      "name": "maximum_number_of_builds",
+      "value": 0
+    },
+    {
+      "@type": "setting",
+      "@href": "/repo/18391368/setting/auto_cancel_pushes",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "write": true
+      },
+      "name": "auto_cancel_pushes",
+      "value": true
+    },
+    {
+      "@type": "setting",
+      "@href": "/repo/18391368/setting/auto_cancel_pull_requests",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "write": true
+      },
+      "name": "auto_cancel_pull_requests",
+      "value": true
+    }
+  ]
+}

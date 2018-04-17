@@ -4,6 +4,7 @@ import XCTest
     public func allTests() -> [XCTestCaseEntry] {
         return [
             testCase(TravisClientTests.allTests),
+            testCase(JSONTests.allTests),
         ]
     }
 #endif

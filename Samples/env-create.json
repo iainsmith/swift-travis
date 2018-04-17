@@ -1,0 +1,12 @@
+{
+  "@type": "env_var",
+  "@href": "/repo/18391368/env_var/255ae2fa-e5dd-42d9-9c74-28b6f50228ef",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "write": true
+  },
+  "id": "255ae2fa-e5dd-42d9-9c74-28b6f50228ef",
+  "name": "FOO",
+  "public": false
+}

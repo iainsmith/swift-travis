@@ -1,0 +1,274 @@
+{
+  "@type": "branches",
+  "@href": "/repo/iainsmith%2FSwiftGherkin/branches",
+  "@representation": "standard",
+  "@pagination": {
+    "limit": 25,
+    "offset": 0,
+    "count": 8,
+    "is_first": true,
+    "is_last": true,
+    "next": null,
+    "prev": null,
+    "first": {
+      "@href": "/repo/iainsmith%2FSwiftGherkin/branches",
+      "offset": 0,
+      "limit": 25
+    },
+    "last": {
+      "@href": "/repo/iainsmith%2FSwiftGherkin/branches",
+      "offset": 0,
+      "limit": 25
+    }
+  },
+  "branches": [
+    {
+      "@type": "branch",
+      "@href": "/repo/18391368/branch/master",
+      "@representation": "standard",
+      "name": "master",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "default_branch": true,
+      "exists_on_github": true,
+      "last_build": {
+        "@type": "build",
+        "@href": "/build/364862517",
+        "@representation": "minimal",
+        "id": 364862517,
+        "number": "49",
+        "state": "passed",
+        "duration": 535,
+        "event_type": "push",
+        "previous_state": "passed",
+        "pull_request_title": null,
+        "pull_request_number": null,
+        "started_at": "2018-04-10T22:55:15Z",
+        "finished_at": "2018-04-10T22:58:33Z"
+      }
+    },
+    {
+      "@type": "branch",
+      "@href": "/repo/18391368/branch/update-files",
+      "@representation": "standard",
+      "name": "update-files",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "default_branch": false,
+      "exists_on_github": true,
+      "last_build": {
+        "@type": "build",
+        "@href": "/build/364860807",
+        "@representation": "minimal",
+        "id": 364860807,
+        "number": "48",
+        "state": "passed",
+        "duration": 488,
+        "event_type": "push",
+        "previous_state": "passed",
+        "pull_request_title": null,
+        "pull_request_number": null,
+        "started_at": "2018-04-10T22:49:45Z",
+        "finished_at": "2018-04-10T22:52:56Z"
+      }
+    },
+    {
+      "@type": "branch",
+      "@href": "/repo/18391368/branch/feature%2Flinux-tests",
+      "@representation": "standard",
+      "name": "feature/linux-tests",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "default_branch": false,
+      "exists_on_github": true,
+      "last_build": {
+        "@type": "build",
+        "@href": "/build/363903041",
+        "@representation": "minimal",
+        "id": 363903041,
+        "number": "43",
+        "state": "passed",
+        "duration": 522,
+        "event_type": "push",
+        "previous_state": "passed",
+        "pull_request_title": null,
+        "pull_request_number": null,
+        "started_at": "2018-04-08T23:14:49Z",
+        "finished_at": "2018-04-08T23:17:56Z"
+      }
+    },
+    {
+      "@type": "branch",
+      "@href": "/repo/18391368/branch/cli",
+      "@representation": "standard",
+      "name": "cli",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "default_branch": false,
+      "exists_on_github": true,
+      "last_build": {
+        "@type": "build",
+        "@href": "/build/360212544",
+        "@representation": "minimal",
+        "id": 360212544,
+        "number": "33",
+        "state": "passed",
+        "duration": 112,
+        "event_type": "push",
+        "previous_state": "passed",
+        "pull_request_title": null,
+        "pull_request_number": null,
+        "started_at": "2018-03-30T10:08:23Z",
+        "finished_at": "2018-03-30T10:10:15Z"
+      }
+    },
+    {
+      "@type": "branch",
+      "@href": "/repo/18391368/branch/xcpretty",
+      "@representation": "standard",
+      "name": "xcpretty",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "default_branch": false,
+      "exists_on_github": true,
+      "last_build": {
+        "@type": "build",
+        "@href": "/build/360211667",
+        "@representation": "minimal",
+        "id": 360211667,
+        "number": "29",
+        "state": "passed",
+        "duration": 91,
+        "event_type": "push",
+        "previous_state": null,
+        "pull_request_title": null,
+        "pull_request_number": null,
+        "started_at": "2018-03-30T10:04:35Z",
+        "finished_at": "2018-03-30T10:06:06Z"
+      }
+    },
+    {
+      "@type": "branch",
+      "@href": "/repo/18391368/branch/0.1.0",
+      "@representation": "standard",
+      "name": "0.1.0",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "default_branch": false,
+      "exists_on_github": false,
+      "last_build": {
+        "@type": "build",
+        "@href": "/build/359744505",
+        "@representation": "minimal",
+        "id": 359744505,
+        "number": "26",
+        "state": "passed",
+        "duration": 98,
+        "event_type": "push",
+        "previous_state": null,
+        "pull_request_title": null,
+        "pull_request_number": null,
+        "started_at": "2018-03-29T08:56:20Z",
+        "finished_at": "2018-03-29T08:57:58Z"
+      }
+    },
+    {
+      "@type": "branch",
+      "@href": "/repo/18391368/branch/docs",
+      "@representation": "standard",
+      "name": "docs",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "default_branch": false,
+      "exists_on_github": false,
+      "last_build": {
+        "@type": "build",
+        "@href": "/build/359740724",
+        "@representation": "minimal",
+        "id": 359740724,
+        "number": "24",
+        "state": "passed",
+        "duration": 102,
+        "event_type": "push",
+        "previous_state": "passed",
+        "pull_request_title": null,
+        "pull_request_number": null,
+        "started_at": "2018-03-29T08:44:58Z",
+        "finished_at": "2018-03-29T08:46:40Z"
+      }
+    },
+    {
+      "@type": "branch",
+      "@href": "/repo/18391368/branch/feature%2Fci",
+      "@representation": "standard",
+      "name": "feature/ci",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/18391368",
+        "@representation": "minimal",
+        "id": 18391368,
+        "name": "SwiftGherkin",
+        "slug": "iainsmith/SwiftGherkin"
+      },
+      "default_branch": false,
+      "exists_on_github": false,
+      "last_build": {
+        "@type": "build",
+        "@href": "/build/359718900",
+        "@representation": "minimal",
+        "id": 359718900,
+        "number": "17",
+        "state": "passed",
+        "duration": 103,
+        "event_type": "push",
+        "previous_state": "passed",
+        "pull_request_title": null,
+        "pull_request_number": null,
+        "started_at": "2018-03-29T07:28:21Z",
+        "finished_at": "2018-03-29T07:30:04Z"
+      }
+    }
+  ]
+}

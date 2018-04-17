@@ -1,0 +1,255 @@
+{
+  "@type": "jobs",
+  "@href": "/build/365367401/jobs",
+  "@representation": "standard",
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/job/365367402",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "delete_log": false,
+        "cancel": false,
+        "restart": false,
+        "debug": false
+      },
+      "id": 365367402,
+      "allow_failure": false,
+      "number": "51.1",
+      "state": "passed",
+      "started_at": "2018-04-11T23:05:12Z",
+      "finished_at": "2018-04-11T23:06:17Z",
+      "build": {
+        "@type": "build",
+        "@href": "/build/365367401",
+        "@representation": "minimal",
+        "id": 365367401,
+        "number": "51",
+        "state": "passed",
+        "duration": 245,
+        "event_type": "pull_request",
+        "previous_state": "passed",
+        "pull_request_title": "Async Output & Fixed standard FileHandler's ",
+        "pull_request_number": 32,
+        "started_at": "2018-04-11T23:05:12Z",
+        "finished_at": "2018-04-11T23:07:33Z"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/12839471",
+        "@representation": "minimal",
+        "id": 12839471,
+        "name": "ShellOut",
+        "slug": "JohnSundell/ShellOut"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 109024604,
+        "sha": "7d97e0ce1b2c538d1d4debbaf5cfada134e04d94",
+        "ref": "refs/pull/32/merge",
+        "message": "Knock swift version down to 4.0",
+        "compare_url": "https://github.com/JohnSundell/ShellOut/pull/32",
+        "committed_at": "2018-04-11T23:02:59Z"
+      },
+      "owner": {
+        "@type": "user",
+        "@href": "/user/253549",
+        "@representation": "minimal",
+        "id": 253549,
+        "login": "JohnSundell"
+      },
+      "stage": null,
+      "created_at": "2018-04-11T23:04:38.249Z",
+      "updated_at": "2018-04-11T23:06:17.975Z"
+    },
+    {
+      "@type": "job",
+      "@href": "/job/365367403",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "delete_log": false,
+        "cancel": false,
+        "restart": false,
+        "debug": false
+      },
+      "id": 365367403,
+      "allow_failure": false,
+      "number": "51.2",
+      "state": "passed",
+      "started_at": "2018-04-11T23:05:47Z",
+      "finished_at": "2018-04-11T23:06:36Z",
+      "build": {
+        "@type": "build",
+        "@href": "/build/365367401",
+        "@representation": "minimal",
+        "id": 365367401,
+        "number": "51",
+        "state": "passed",
+        "duration": 245,
+        "event_type": "pull_request",
+        "previous_state": "passed",
+        "pull_request_title": "Async Output & Fixed standard FileHandler's ",
+        "pull_request_number": 32,
+        "started_at": "2018-04-11T23:05:12Z",
+        "finished_at": "2018-04-11T23:07:33Z"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/12839471",
+        "@representation": "minimal",
+        "id": 12839471,
+        "name": "ShellOut",
+        "slug": "JohnSundell/ShellOut"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 109024604,
+        "sha": "7d97e0ce1b2c538d1d4debbaf5cfada134e04d94",
+        "ref": "refs/pull/32/merge",
+        "message": "Knock swift version down to 4.0",
+        "compare_url": "https://github.com/JohnSundell/ShellOut/pull/32",
+        "committed_at": "2018-04-11T23:02:59Z"
+      },
+      "owner": {
+        "@type": "user",
+        "@href": "/user/253549",
+        "@representation": "minimal",
+        "id": 253549,
+        "login": "JohnSundell"
+      },
+      "stage": null,
+      "created_at": "2018-04-11T23:04:38.295Z",
+      "updated_at": "2018-04-11T23:06:36.819Z"
+    },
+    {
+      "@type": "job",
+      "@href": "/job/365367404",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "delete_log": false,
+        "cancel": false,
+        "restart": false,
+        "debug": false
+      },
+      "id": 365367404,
+      "allow_failure": false,
+      "number": "51.3",
+      "state": "passed",
+      "started_at": "2018-04-11T23:05:47Z",
+      "finished_at": "2018-04-11T23:06:15Z",
+      "build": {
+        "@type": "build",
+        "@href": "/build/365367401",
+        "@representation": "minimal",
+        "id": 365367401,
+        "number": "51",
+        "state": "passed",
+        "duration": 245,
+        "event_type": "pull_request",
+        "previous_state": "passed",
+        "pull_request_title": "Async Output & Fixed standard FileHandler's ",
+        "pull_request_number": 32,
+        "started_at": "2018-04-11T23:05:12Z",
+        "finished_at": "2018-04-11T23:07:33Z"
+      },
+      "queue": "builds.macstadium6",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/12839471",
+        "@representation": "minimal",
+        "id": 12839471,
+        "name": "ShellOut",
+        "slug": "JohnSundell/ShellOut"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 109024604,
+        "sha": "7d97e0ce1b2c538d1d4debbaf5cfada134e04d94",
+        "ref": "refs/pull/32/merge",
+        "message": "Knock swift version down to 4.0",
+        "compare_url": "https://github.com/JohnSundell/ShellOut/pull/32",
+        "committed_at": "2018-04-11T23:02:59Z"
+      },
+      "owner": {
+        "@type": "user",
+        "@href": "/user/253549",
+        "@representation": "minimal",
+        "id": 253549,
+        "login": "JohnSundell"
+      },
+      "stage": null,
+      "created_at": "2018-04-11T23:04:38.315Z",
+      "updated_at": "2018-04-11T23:06:15.551Z"
+    },
+    {
+      "@type": "job",
+      "@href": "/job/365367405",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "delete_log": false,
+        "cancel": false,
+        "restart": false,
+        "debug": false
+      },
+      "id": 365367405,
+      "allow_failure": false,
+      "number": "51.4",
+      "state": "passed",
+      "started_at": "2018-04-11T23:05:50Z",
+      "finished_at": "2018-04-11T23:07:33Z",
+      "build": {
+        "@type": "build",
+        "@href": "/build/365367401",
+        "@representation": "minimal",
+        "id": 365367401,
+        "number": "51",
+        "state": "passed",
+        "duration": 245,
+        "event_type": "pull_request",
+        "previous_state": "passed",
+        "pull_request_title": "Async Output & Fixed standard FileHandler's ",
+        "pull_request_number": 32,
+        "started_at": "2018-04-11T23:05:12Z",
+        "finished_at": "2018-04-11T23:07:33Z"
+      },
+      "queue": "builds.macstadium6",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/12839471",
+        "@representation": "minimal",
+        "id": 12839471,
+        "name": "ShellOut",
+        "slug": "JohnSundell/ShellOut"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 109024604,
+        "sha": "7d97e0ce1b2c538d1d4debbaf5cfada134e04d94",
+        "ref": "refs/pull/32/merge",
+        "message": "Knock swift version down to 4.0",
+        "compare_url": "https://github.com/JohnSundell/ShellOut/pull/32",
+        "committed_at": "2018-04-11T23:02:59Z"
+      },
+      "owner": {
+        "@type": "user",
+        "@href": "/user/253549",
+        "@representation": "minimal",
+        "id": 253549,
+        "login": "JohnSundell"
+      },
+      "stage": null,
+      "created_at": "2018-04-11T23:04:38.347Z",
+      "updated_at": "2018-04-11T23:07:33.259Z"
+    }
+  ]
+}

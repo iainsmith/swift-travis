@@ -15,6 +15,7 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.userBuilds { result in
             if case let .success(builds) = result {
+                let build = builds[\[Build].first?.commit[\.message]]
                 exp.fulfill()
             } else {
                 XCTFail()
