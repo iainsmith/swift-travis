@@ -147,30 +147,87 @@
 
 <p>A Travis v3 API client for Swift 4.x</p>
 
-<p><a href="https://travis-ci.org/iainsmith/TravisClient"><img src="https://travis-ci.org/iainsmith/TravisClient.svg?branch=master" alt="Build Status"></a></p>
+<p><a href="https://travis-ci.org/iainsmith/TravisClient"><img src="https://travis-ci.org/iainsmith/TravisClient.svg?branch=master" alt="Build Status"></a> | <a href="https://iainsmith.github.io/TravisClient/index.html">Read the docs</a></p>
+<h2 id='installation' class='heading'>Installation</h2>
 
-<p><a href="https://iainsmith.github.io/TravisClient/index.html">Read the docs</a></p>
+<ul>
+<li>Install with cocoapods: <code>pod &#39;TravisClient&#39;</code></li>
+<li>Install with SPM <code>.package(url: &quot;https://github.com/IainSmith/TravisClient&quot;, from: &quot;0.2.0&quot;),</code></li>
+</ul>
+<h3 id='quick-usage' class='heading'>Quick Usage</h3>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">TravisClient</span>
+
+<span class="k">let</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"YOUR_TRAVIS_API_KEY"</span>
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">TravisClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="nv">host</span><span class="p">:</span> <span class="o">.</span><span class="n">org</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">activeBuilds</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Meta</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Build</span><span class="p">]</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">TravisError</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">/// In swift 4.1 you can subscript directly into the Result</span>
+    <span class="k">let</span> <span class="nv">activeBuildCount</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="n">result</span><span class="p">[\[</span><span class="kt">Build</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">firstBuildPRTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="n">result</span><span class="p">[\</span><span class="o">.</span><span class="n">first</span><span class="p">?</span><span class="o">.</span><span class="n">pullRequestTitle</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='travis-api-concepts' class='heading'>Travis API Concepts.</h2>
+
+<p><a href="https://developer.travis-ci.com/gettingstarted">Read the Travis API documentation</a> for much more detail. TravisClient follows the same naming conventions &amp; concepts from the official api documentation.</p>
+<h4 id='minimal-vs-standard-representation' class='heading'>Minimal vs Standard Representation.</h4>
+
+<p>Each model object has two representations. A standard representation that includes all the attributes and a minimal representation that includes some attributes.</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MinimalJob</span><span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Minimal</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Job</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="kd">public</span> <span class="k">let</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="kd">public</span> <span class="k">let</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="c1">// 10 other properties</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><a href="https://developer.travis-ci.com/resource/job#Job">Minimal vs Standard Job Example Travis documentation</a></p>
+
+<p>If you need more information you can load a standard representation using the <code>client.follow(embed:completion:)</code> method</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">build</span><span class="p">:</span> <span class="kt">Meta</span><span class="o">&lt;</span><span class="kt">Build</span><span class="o">&gt;</span>
+<span class="k">let</span> <span class="nv">minimalJob</span><span class="p">:</span> <span class="kt">Embed</span><span class="o">&lt;</span><span class="kt">MinimalJob</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">build</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">first</span><span class="o">!</span> <span class="c1">// don't do this in production code</span>
+
+<span class="n">client</span><span class="o">.</span><span class="nf">follow</span><span class="p">(</span><span class="nv">embed</span><span class="p">:</span> <span class="n">minimalJob</span><span class="p">)</span> <span class="p">{</span> <span class="n">fullJob</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">fullJob</span><span class="p">[\</span><span class="o">.</span><span class="n">state</span><span class="p">])</span>
+<span class="p">}</span>
+</code></pre>
 <h2 id='usage' class='heading'>Usage</h2>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">TravisClient</span>
 
 <span class="k">let</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"YOUR_TRAVIS_API_KEY"</span>
 <span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">TravisClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="nv">host</span><span class="p">:</span> <span class="o">.</span><span class="n">org</span><span class="p">)</span>
 
-<span class="n">client</span><span class="o">.</span><span class="n">activeBuilds</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">Meta</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Build</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+<span class="n">client</span><span class="o">.</span><span class="n">activeBuilds</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Meta</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Build</span><span class="p">]</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">TravisError</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+
+    <span class="cp">#if swift(&gt;=4.1)</span>
+    <span class="c1">/// In swift 4.1 you can subscript directly into the Result</span>
+    <span class="k">let</span> <span class="nv">activeBuildCount</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="n">result</span><span class="p">[\</span><span class="kt">Build</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+    <span class="cp">#else</span>
+    <span class="c1">/// In swift 4.0 you need to subscript into the optional value of a result.</span>
+    <span class="k">let</span> <span class="nv">resultBuildNumber</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">?[\</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+    <span class="cp">#endif</span>
+
+
+    <span class="c1">/// You can also switch over the result</span>
     <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">builds</span><span class="p">):</span>
+    <span class="k">case</span> <span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">builds</span><span class="p">:</span> <span class="kt">Meta</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Build</span><span class="p">]</span><span class="o">&gt;</span><span class="p">):</span>
         <span class="c1">// Find the number of active builds</span>
         <span class="n">builds</span><span class="p">[\</span><span class="o">.</span><span class="n">count</span><span class="p">])</span>
 
         <span class="c1">// Find the jobs associated with this build</span>
-        <span class="k">let</span> <span class="nv">jobs</span><span class="p">:</span> <span class="p">[</span><span class="kt">Embed</span><span class="o">&lt;</span><span class="kt">MinimalJob</span><span class="o">&gt;</span><span class="p">]</span> <span class="o">=</span> <span class="n">builds</span><span class="p">[\</span><span class="o">.</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">jobs</span><span class="p">]</span> <span class="c1">// in prod you should typically use [\.first?.jobs]</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">job</span><span class="p">:</span> <span class="kt">Embed</span><span class="o">&lt;</span><span class="kt">MinimalJob</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">jobs</span><span class="p">[\</span><span class="o">.</span><span class="n">first</span><span class="p">]</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
 
-        <span class="c1">// Travis </span>
-        <span class="k">let</span> <span class="nv">job</span><span class="p">:</span> <span class="kt">Embed</span><span class="o">&lt;</span><span class="kt">MinimalJob</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">jobs</span><span class="p">[\</span><span class="o">.</span><span class="n">first</span><span class="p">]</span>
-
-        <span class="c1">// The travis api client support hyper media so you can easily load the full object in a second request.</span>
-        <span class="n">client</span><span class="o">.</span><span class="nf">follow</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="nv">jobResult</span><span class="p">:</span> <span class="kt">Meta</span><span class="o">&lt;</span><span class="kt">Commit</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+        <span class="c1">// Each API call returns one resource that has a 'standard representation' full object in this case  supports hyper media so you can easily load the full object in a second request.</span>
+        <span class="n">client</span><span class="o">.</span><span class="nf">follow</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="nv">jobResult</span><span class="p">:</span> <span class="kt">Meta</span><span class="o">&lt;</span><span class="kt">Job</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
             <span class="nf">print</span><span class="p">(</span><span class="n">jobResult</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Or follow a paginated request</span>
+        <span class="n">client</span><span class="o">.</span><span class="nf">follow</span><span class="p">(</span><span class="n">builds</span><span class="o">.</span><span class="n">pagination</span><span class="p">?</span><span class="o">.</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span> <span class="n">nextPage</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">nextPage</span><span class="p">)</span>
         <span class="p">}</span>
 
     <span class="k">case</span> <span class="nf">error</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
@@ -190,9 +247,9 @@
 
 <ul>
 <li>[x] Support paginated requests</li>
-<li>[x] Add User</li>
+<li>[x] Add User Model</li>
 <li>[x] Add Simple Query parameters</li>
-<li>[ ] Add Stages</li>
+<li>[ ] Add Stages Model</li>
 <li>[ ] Add more typed sort parameters</li>
 <li>[ ] Support Type safe Eager Loading.</li>
 </ul>
@@ -200,7 +257,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Iain Smith</a>. All rights reserved. (Last updated: 2018-04-18)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/IainSmith/TravisClient" target="_blank" rel="external">Iain Smith</a>. All rights reserved. (Last updated: 2018-04-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
