@@ -2,7 +2,6 @@ import Foundation
 
 /// Included when the resource is returned as part of another resource
 public struct MinimalBuild: Codable, Minimal {
-
     /// Value uniquely identifying the build
     public let id: Int
 
@@ -51,7 +50,6 @@ public struct MinimalBuild: Codable, Minimal {
 
 /// Included when the resource is the main response of a request
 public struct Build: Codable {
-
     /// Value uniquely identifying the build
     public let id: Int
 
@@ -99,6 +97,8 @@ public struct Build: Codable {
     /// - Note: This should be a date, but currently the built in iso8601 does not handle this format
     public let updatedAt: String
 
+    public let createdBy: Embed<MinimalUser>
+
     enum CodingKeys: String, CodingKey {
         case id
         case number
@@ -116,5 +116,6 @@ public struct Build: Codable {
         case commit
         case jobs
         case updatedAt = "updated_at"
+        case createdBy = "created_by"
     }
 }

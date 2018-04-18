@@ -1,6 +1,5 @@
 /// The log output from a job
 public struct Log: Codable {
-
     /// The id of this log
     public let id: Int
 

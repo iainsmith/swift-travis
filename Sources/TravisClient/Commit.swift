@@ -2,7 +2,6 @@ import Foundation
 
 /// Included when the resource is returned as part of another resource
 public struct MinimalCommit: Codable {
-
     /// Value uniquely identifying the commit
     public let id: Int
 

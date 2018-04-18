@@ -52,8 +52,9 @@ client.activeBuilds { (result: Meta<[Build]>) in
 
 ## TODO
 
-* [ ] Support paginated requests
-* [ ] Add Stage
-* [ ] Add Owner
-* [ ] Add Query parameters
+* [x] Support paginated requests
+* [x] Add User
+* [x] Add Simple Query parameters
+* [ ] Add Stages
+* [ ] Add more typed sort parameters
 * [ ] Support Type safe Eager Loading.
