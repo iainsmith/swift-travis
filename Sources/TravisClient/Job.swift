@@ -9,7 +9,6 @@ public struct MinimalJob: Codable, Minimal {
 
 /// Included when the resource is the main response of a request
 public struct Job: Codable {
-
     /// Value uniquely identifying the job
     public let id: Int
 
@@ -45,4 +44,6 @@ public struct Job: Codable {
 
     /// When the job was updated.
     public let updated_at: String
+
+    public let owner: Embed<MinimalUser>
 }

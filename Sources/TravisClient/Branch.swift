@@ -11,7 +11,6 @@ public struct MinimalBranch: Codable, Minimal {
 }
 
 public struct Branch: Codable {
-
     /// Name of the git branch
     public let name: String
 

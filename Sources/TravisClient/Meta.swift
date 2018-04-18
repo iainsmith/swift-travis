@@ -1,7 +1,7 @@
 public struct Meta<Object: Codable>: Codable, ObjectSubscriptable {
     public let type: String
     public let path: String
-    public let pagination: Pagination?
+    public let pagination: Pagination<Object>?
     public let object: Object
 
     enum CodingKeys: String, CodingKey {

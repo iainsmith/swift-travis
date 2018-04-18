@@ -1,5 +1,6 @@
 import Foundation
 @_exported import Result
+import URLQueryItemEncoder
 
 /// API Client for talking to the travis v3 api.
 public class TravisClient {
@@ -24,16 +25,16 @@ public class TravisClient {
     /// - Parameters:
     ///   - owner: The github username or ID
     ///   - completion: Either a Meta<[Repository]> or a TravisError
-    public func repositories(forOwner owner: String, completion: @escaping Completion<[Repository]>) {
-        let url = makeURL(path: "/owner/\(owner.pathEscape())/repos")
+    public func repositories(forOwner owner: String, query: GeneralQuery? = nil, completion: @escaping Completion<[Repository]>) {
+        let url = makeURL(path: "/owner/\(owner.pathEscape())/repos", query: query)
         request(url, completion: completion)
     }
 
     /// Fetch the repositories for the current user
     ///
     /// - Parameter completion: Either a Meta<[Repository]> or a TravisError
-    public func userRepositories(completion: @escaping Completion<[Repository]>) {
-        let url = makeURL(path: "/repos")
+    public func userRepositories(query: GeneralQuery? = nil, completion: @escaping Completion<[Repository]>) {
+        let url = makeURL(path: "/repos", query: query)
         request(url, completion: completion)
     }
 
@@ -42,15 +43,15 @@ public class TravisClient {
     /// Fetch the active builds for the current user
     ///
     /// - Parameter completion: Either a Meta<[Build]> or a TravisError
-    public func userActiveBuilds(completion: @escaping Completion<[Build]>) {
-        let url = makeURL(path: "/active")
+    public func userActiveBuilds(query: BuildQuery?, completion: @escaping Completion<[Build]>) {
+        let url = makeURL(path: "/active", query: query)
         request(url, completion: completion)
     }
 
     // MARK: Jobs
 
-    public func jobs(forBuild identfier: String, completion: @escaping Completion<[Job]>) {
-        let url = makeURL(path: "/build/\(identfier.pathEscape())/jobs")
+    public func jobs(forBuild identfier: String, query: GeneralQuery? = nil, completion: @escaping Completion<[Job]>) {
+        let url = makeURL(path: "/build/\(identfier.pathEscape())/jobs", query: query)
         request(url, completion: completion)
     }
 
@@ -63,8 +64,8 @@ public class TravisClient {
 
     // MARK: Branches
 
-    public func branches(forBuild identfier: String, completion: @escaping Completion<[Branch]>) {
-        let url = makeURL(path: "/repo/\(identfier.pathEscape())/branchs")
+    public func branches(forBuild identfier: String, query: GeneralQuery? = nil, completion: @escaping Completion<[Branch]>) {
+        let url = makeURL(path: "/repo/\(identfier.pathEscape())/branchs", query: query)
         request(url, completion: completion)
     }
 
@@ -104,13 +105,13 @@ public class TravisClient {
 
     // MARK: Builds
 
-    public func userBuilds(completion: @escaping Completion<[Build]>) {
-        let url = makeURL(path: "/builds")
+    public func userBuilds(query: BuildQuery? = nil, completion: @escaping Completion<[Build]>) {
+        let url = makeURL(path: "/builds", query: query)
         request(url, completion: completion)
     }
 
-    public func builds(forRepository repoIdOrSlug: String, completion: @escaping Completion<[Build]>) {
-        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/builds")
+    public func builds(forRepository repoIdOrSlug: String, query: BuildQuery? = nil, completion: @escaping Completion<[Build]>) {
+        let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/builds", query: query)
         request(url, completion: completion)
     }
 
@@ -183,6 +184,17 @@ public class TravisClient {
         request(url, completion: completion)
     }
 
+    public func follow<T>(page: Page<T>, completion: @escaping Completion<T>) {
+        guard let components = URLComponents(string: page.path.rawValue) else {
+            let result = Result<Meta<T>, TravisError>.failure(.notPathEscapable)
+            onMain(completion: completion, result: result)
+            return
+        }
+
+        let url = makeURL(path: components.percentEncodedPath, query: components.queryItems)
+        request(url, completion: completion)
+    }
+
     // MARK: Requests
 
     func request<T>(_ url: URLRequest, completion: @escaping Completion<T>) {
@@ -204,6 +216,8 @@ public class TravisClient {
             let jsonDecoder = JSONDecoder()
             if #available(OSX 10.12, *) {
                 jsonDecoder.dateDecodingStrategy = .iso8601
+            } else {
+                // TODO: Use a custom formatter when iso8601 is not supported .formatted(<#T##DateFormatter#>)
             }
 
             do {
@@ -237,8 +251,13 @@ extension TravisClient {
 }
 
 extension TravisClient {
-    func makeURL<T: Encodable>(path: String, query: [URLQueryItem]? = nil, method: HTTPMethod = .get, encodable: T) -> URLRequest {
-        var request = makeURL(path: path, query: query, method: method)
+    func makeURL<Query: Encodable>(path: String, query: Query? = nil, method: HTTPMethod = .get) -> URLRequest {
+        let queryItems = try? URLQueryItemEncoder().encode(query)
+        return makeURL(path: path, query: queryItems, method: method)
+    }
+
+    func makeURL<T: Encodable>(path: String, method: HTTPMethod = .get, encodable: T) -> URLRequest {
+        var request = makeURL(path: path, method: method)
         request.httpBody = try? JSONEncoder().encode(encodable)
         return request
     }

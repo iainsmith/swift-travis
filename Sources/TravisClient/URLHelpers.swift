@@ -1,5 +1,5 @@
-import Foundation
 import Dispatch
+import Foundation
 
 enum HTTPMethod {
     case get
