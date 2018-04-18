@@ -12,6 +12,7 @@ let file = #file
 let path = URL(fileURLWithPath: NSString(string: file).deletingLastPathComponent.appending("/../../Samples"))
 
 @available(OSX 10.12, *)
+@available(iOS 10.0, *)
 class JSONTests: XCTestCase {
     lazy var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -73,6 +74,24 @@ class JSONTests: XCTestCase {
         XCTAssertNotNil(result)
         XCTAssertEqual(result[\.id], 266_982_558)
         XCTAssertEqual(result[\.content].lengthOfBytes(using: .utf8), 36483)
+    }
+
+
+    func testObjectSubscripting() throws {
+        url = path.appendingPathComponent("build-restart.json")
+        let build = try decoder.decode(Action<MinimalBuild>.self, from: data)
+        let result = Result<Action<MinimalBuild>, TravisError>.init(value: build)
+
+        #if swift(>=4.1)
+        let resultBuildNumber = result[\.id]
+        #else
+        let resultBuildNumber = result.value?[\.id]
+        #endif
+
+        let value = result.value
+        let buildNumber = build[\.id]
+        XCTAssertEqual(resultBuildNumber, 359741180)
+        XCTAssertEqual(buildNumber, 359741180)
     }
 
     static var allTests = [
