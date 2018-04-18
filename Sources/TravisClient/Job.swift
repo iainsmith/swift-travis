@@ -13,7 +13,7 @@ public struct Job: Codable {
     public let id: Int
 
     /// The job's allow_failure
-    public let allow_failure: Bool
+    public let allowFailure: Bool
 
     /// Incremental number for a repository's builds
     public let number: String
@@ -22,10 +22,10 @@ public struct Job: Codable {
     public let state: String
 
     /// When the job started
-    public let started_at: String
+    public let startedAt: String
 
     /// When the job finished
-    public let finished_at: String
+    public let finishedAt: String
 
     /// The build the job is associated with
     public let build: Embed<MinimalBuild>
@@ -40,10 +40,26 @@ public struct Job: Codable {
     public let repository: Embed<MinimalRepository>
 
     /// When the job was created
-    public let created_at: String
+    public let createdAt: String
 
     /// When the job was updated.
-    public let updated_at: String
+    public let updatedAt: String
 
     public let owner: Embed<MinimalUser>
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case allowFailure = "allow_failure"
+        case number
+        case state
+        case startedAt = "started_at"
+        case finishedAt = "finished_at"
+        case build
+        case queue
+        case commit
+        case repository
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case owner
+    }
 }
