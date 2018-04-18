@@ -11,13 +11,12 @@ let package = Package(
             targets: ["TravisClient"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/antitypical/Result", from: "3.0.0"),
-        .package(url: "https://github.com/pitiphong-p/URLQueryItemEncoder", from: "0.2.1"),
+        .package(url: "https://github.com/antitypical/Result", from: "3.0.0")
     ],
     targets: [
         .target(
             name: "TravisClient",
-            dependencies: ["Result", "URLQueryItemEncoder"]),
+            dependencies: ["Result"]),
         .testTarget(
             name: "TravisClientTests",
             dependencies: ["TravisClient"]),

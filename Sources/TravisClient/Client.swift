@@ -1,6 +1,5 @@
 import Foundation
 @_exported import Result
-import URLQueryItemEncoder
 
 /// API Client for talking to the travis v3 api.
 public class TravisClient {
@@ -251,8 +250,8 @@ extension TravisClient {
 }
 
 extension TravisClient {
-    func makeURL<Query: Encodable>(path: String, query: Query? = nil, method: HTTPMethod = .get) -> URLRequest {
-        let queryItems = try? URLQueryItemEncoder().encode(query)
+    func makeURL<Query: QueryConvertible>(path: String, query: Query? = nil, method: HTTPMethod = .get) -> URLRequest {
+        let queryItems = query?.queryItems
         return makeURL(path: path, query: queryItems, method: method)
     }
 

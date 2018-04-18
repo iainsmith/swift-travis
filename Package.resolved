@@ -9,15 +9,6 @@
           "revision": "7477584259bfce2560a19e06ad9f71db441fff11",
           "version": "3.2.4"
         }
-      },
-      {
-        "package": "URLQueryItemEncoder",
-        "repositoryURL": "https://github.com/pitiphong-p/URLQueryItemEncoder",
-        "state": {
-          "branch": null,
-          "revision": "e43e4ea7b1d811b1fe96e276a7df58b350daac75",
-          "version": "0.2.1"
-        }
       }
     ]
   },
