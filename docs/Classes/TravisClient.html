@@ -14,7 +14,7 @@
     <a title="TravisClient Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">TravisClient Docs</a> (55% documented)</p>
+        <p><a href="../index.html">TravisClient Docs</a> (49% documented)</p>
         <p class="header-right"><a href="https://github.com/iainsmith/TravisClient"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -39,6 +39,9 @@
           <li class="nav-group-name">
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BuildSortable.html">BuildSortable</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Enums/TravisEndpoint.html">TravisEndpoint</a>
               </li>
@@ -83,6 +86,9 @@
                 <a href="../Structs/Job.html">Job</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/Link.html">Link</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Log.html">Log</a>
               </li>
               <li class="nav-group-task">
@@ -107,7 +113,16 @@
                 <a href="../Structs/MinimalRepository.html">MinimalRepository</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/MinimalUser.html">MinimalUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Page.html">Page</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Pagination.html">Pagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Query.html">Query</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Repository.html">Repository</a>
@@ -225,9 +240,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC12repositoriesXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/repositories(forOwner:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC12repositoriesXeXeF">repositories(forOwner:completion:)</a>
+                    <a name="/s:12TravisClientAAC12repositoriesySS8forOwner_AA5QueryVySSGSg5queryy6ResultAJOyAA4MetaVySayAA10RepositoryVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/repositories(forOwner:query:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC12repositoriesySS8forOwner_AA5QueryVySSGSg5queryy6ResultAJOyAA4MetaVySayAA10RepositoryVGGAA0A5ErrorOGc10completiontF">repositories(forOwner:query:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -242,7 +257,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">repositories</span><span class="p">(</span><span class="n">forOwner</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">repositories</span><span class="p">(</span><span class="n">forOwner</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">GeneralQuery</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -283,9 +298,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC16userRepositoriesXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/userRepositories(completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC16userRepositoriesXeXeF">userRepositories(completion:)</a>
+                    <a name="/s:12TravisClientAAC16userRepositoriesyAA5QueryVySSGSg5query_y6ResultAIOyAA4MetaVySayAA10RepositoryVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/userRepositories(query:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC16userRepositoriesyAA5QueryVySSGSg5query_y6ResultAIOyAA4MetaVySayAA10RepositoryVGGAA0A5ErrorOGc10completiontF">userRepositories(query:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -300,7 +315,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRepositories</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRepositories</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="kt">GeneralQuery</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Repository.html">Repository</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -340,9 +355,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC16userActiveBuildsXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/userActiveBuilds(completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC16userActiveBuildsXeXeF">userActiveBuilds(completion:)</a>
+                    <a name="/s:12TravisClientAAC16userActiveBuildsyAA5QueryVyAA13BuildSortableOGSg5query_y6ResultAKOyAA4MetaVySayAA0G0VGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/userActiveBuilds(query:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC16userActiveBuildsyAA5QueryVyAA13BuildSortableOGSg5query_y6ResultAKOyAA4MetaVySayAA0G0VGGAA0A5ErrorOGc10completiontF">userActiveBuilds(query:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -357,7 +372,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userActiveBuilds</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userActiveBuilds</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="kt">BuildQuery</span><span class="p">?,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -397,9 +412,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC4jobsXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/jobs(forBuild:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC4jobsXeXeF">jobs(forBuild:completion:)</a>
+                    <a name="/s:12TravisClientAAC4jobsySS8forBuild_AA5QueryVySSGSg5queryy6ResultAJOyAA4MetaVySayAA3JobVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/jobs(forBuild:query:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC4jobsySS8forBuild_AA5QueryVySSGSg5queryy6ResultAJOyAA4MetaVySayAA3JobVGGAA0A5ErrorOGc10completiontF">jobs(forBuild:query:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -414,7 +429,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">jobs</span><span class="p">(</span><span class="n">forBuild</span> <span class="nv">identfier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Job.html">Job</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">jobs</span><span class="p">(</span><span class="n">forBuild</span> <span class="nv">identfier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">GeneralQuery</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Job.html">Job</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -424,9 +439,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC3jobXeXeF"></a>
+                    <a name="/s:12TravisClientAAC3jobySS14withIdentifier_y6ResultAEOyAA4MetaVyAA3JobVGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/job(withIdentifier:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC3jobXeXeF">job(withIdentifier:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC3jobySS14withIdentifier_y6ResultAEOyAA4MetaVyAA3JobVGAA0A5ErrorOGc10completiontF">job(withIdentifier:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -462,9 +477,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC8branchesXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/branches(forBuild:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC8branchesXeXeF">branches(forBuild:completion:)</a>
+                    <a name="/s:12TravisClientAAC8branchesySS8forBuild_AA5QueryVySSGSg5queryy6ResultAJOyAA4MetaVySayAA6BranchVGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/branches(forBuild:query:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC8branchesySS8forBuild_AA5QueryVySSGSg5queryy6ResultAJOyAA4MetaVySayAA6BranchVGGAA0A5ErrorOGc10completiontF">branches(forBuild:query:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -479,7 +494,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">branches</span><span class="p">(</span><span class="n">forBuild</span> <span class="nv">identfier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Branch.html">Branch</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">branches</span><span class="p">(</span><span class="n">forBuild</span> <span class="nv">identfier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">GeneralQuery</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Branch.html">Branch</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -489,9 +504,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC6branchXeXeF"></a>
+                    <a name="/s:12TravisClientAAC6branchySS7forRepo_SS14withIdentifiery6ResultAFOyAA4MetaVyAA6BranchVGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/branch(forRepo:withIdentifier:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC6branchXeXeF">branch(forRepo:withIdentifier:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC6branchySS7forRepo_SS14withIdentifiery6ResultAFOyAA4MetaVyAA6BranchVGAA0A5ErrorOGc10completiontF">branch(forRepo:withIdentifier:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -529,9 +544,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC10repositoryXeXeF"></a>
+                    <a name="/s:12TravisClientAAC10repositoryySS_y6ResultADOyAA4MetaVyAA10RepositoryVGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/repository(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC10repositoryXeXeF">repository(_:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC10repositoryySS_y6ResultADOyAA4MetaVyAA10RepositoryVGAA0A5ErrorOGc10completiontF">repository(_:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -556,9 +571,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC18activateRepositoryXeXeF"></a>
+                    <a name="/s:12TravisClientAAC18activateRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/activateRepository(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC18activateRepositoryXeXeF">activateRepository(_:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC18activateRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF">activateRepository(_:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -583,9 +598,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC20deactivateRepositoryXeXeF"></a>
+                    <a name="/s:12TravisClientAAC20deactivateRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/deactivateRepository(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC20deactivateRepositoryXeXeF">deactivateRepository(_:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC20deactivateRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF">deactivateRepository(_:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -610,9 +625,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC14starRepositoryXeXeF"></a>
+                    <a name="/s:12TravisClientAAC14starRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/starRepository(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC14starRepositoryXeXeF">starRepository(_:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC14starRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF">starRepository(_:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -637,9 +652,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC16unstarRepositoryXeXeF"></a>
+                    <a name="/s:12TravisClientAAC16unstarRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/unstarRepository(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC16unstarRepositoryXeXeF">unstarRepository(_:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC16unstarRepositoryySS_y6ResultADOyAA4MetaVyAA0D0VGAA0A5ErrorOGc10completiontF">unstarRepository(_:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -675,9 +690,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC10userBuildsXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/userBuilds(completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC10userBuildsXeXeF">userBuilds(completion:)</a>
+                    <a name="/s:12TravisClientAAC10userBuildsyAA5QueryVyAA13BuildSortableOGSg5query_y6ResultAKOyAA4MetaVySayAA0F0VGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/userBuilds(query:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC10userBuildsyAA5QueryVyAA13BuildSortableOGSg5query_y6ResultAKOyAA4MetaVySayAA0F0VGGAA0A5ErrorOGc10completiontF">userBuilds(query:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -692,7 +707,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userBuilds</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userBuilds</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="kt">BuildQuery</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -702,9 +717,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC6buildsXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/builds(forRepository:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC6buildsXeXeF">builds(forRepository:completion:)</a>
+                    <a name="/s:12TravisClientAAC6buildsySS13forRepository_AA5QueryVyAA13BuildSortableOGSg5queryy6ResultALOyAA4MetaVySayAA0G0VGGAA0A5ErrorOGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/builds(forRepository:query:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC6buildsySS13forRepository_AA5QueryVyAA13BuildSortableOGSg5queryy6ResultALOyAA4MetaVySayAA0G0VGGAA0A5ErrorOGc10completiontF">builds(forRepository:query:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -719,7 +734,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">builds</span><span class="p">(</span><span class="n">forRepository</span> <span class="nv">repoIdOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">builds</span><span class="p">(</span><span class="n">forRepository</span> <span class="nv">repoIdOrSlug</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">BuildQuery</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Build.html">Build</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -729,9 +744,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC3logXeXeF"></a>
+                    <a name="/s:12TravisClientAAC3logySS6forJob_y6ResultAEOyAA4MetaVyAA3LogVGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/log(forJob:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC3logXeXeF">log(forJob:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC3logySS6forJob_y6ResultAEOyAA4MetaVyAA3LogVGAA0A5ErrorOGc10completiontF">log(forJob:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -767,9 +782,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC5buildXeXeF"></a>
+                    <a name="/s:12TravisClientAAC5buildySS10identifier_y6ResultAEOyAA4MetaVyAA5BuildVGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/build(identifier:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC5buildXeXeF">build(identifier:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC5buildySS10identifier_y6ResultAEOyAA4MetaVyAA5BuildVGAA0A5ErrorOGc10completiontF">build(identifier:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -794,9 +809,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC12restartBuildXeXeF"></a>
+                    <a name="/s:12TravisClientAAC12restartBuildySS10identifier_y6ResultAEOyAA6ActionVyAA07MinimalD0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/restartBuild(identifier:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC12restartBuildXeXeF">restartBuild(identifier:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC12restartBuildySS10identifier_y6ResultAEOyAA6ActionVyAA07MinimalD0VGAA0A5ErrorOGc10completiontF">restartBuild(identifier:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -821,9 +836,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC11cancelBuildXeXeF"></a>
+                    <a name="/s:12TravisClientAAC11cancelBuildySS10identifier_y6ResultAEOyAA4MetaVyAA07MinimalD0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/cancelBuild(identifier:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC11cancelBuildXeXeF">cancelBuild(identifier:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC11cancelBuildySS10identifier_y6ResultAEOyAA4MetaVyAA07MinimalD0VGAA0A5ErrorOGc10completiontF">cancelBuild(identifier:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -859,9 +874,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC20environmentVariablesXeXeF"></a>
+                    <a name="/s:12TravisClientAAC20environmentVariablesySS13forRepository_y6ResultAEOyAA4MetaVySayAA19EnvironmentVariableVGGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/environmentVariables(forRepository:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC20environmentVariablesXeXeF">environmentVariables(forRepository:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC20environmentVariablesySS13forRepository_y6ResultAEOyAA4MetaVySayAA19EnvironmentVariableVGGAA0A5ErrorOGc10completiontF">environmentVariables(forRepository:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -886,9 +901,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC6createXeXeF"></a>
+                    <a name="/s:12TravisClientAAC6createyAA26EnvironmentVariableRequestV_SS13forRepositoryy6ResultAGOyAA4MetaVyAA0dE0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/create(_:forRepository:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC6createXeXeF">create(_:forRepository:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC6createyAA26EnvironmentVariableRequestV_SS13forRepositoryy6ResultAGOyAA4MetaVyAA0dE0VGAA0A5ErrorOGc10completiontF">create(_:forRepository:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -915,9 +930,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC6updateXeXeF"></a>
+                    <a name="/s:12TravisClientAAC6updateyAA26EnvironmentVariableRequestV_SS011environmentE10IdentifierSS13forRepositoryy6ResultAHOyAA4MetaVyAA0dE0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/update(_:environmentVariableIdentifier:forRepository:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC6updateXeXeF">update(_:environmentVariableIdentifier:forRepository:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC6updateyAA26EnvironmentVariableRequestV_SS011environmentE10IdentifierSS13forRepositoryy6ResultAHOyAA4MetaVyAA0dE0VGAA0A5ErrorOGc10completiontF">update(_:environmentVariableIdentifier:forRepository:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -945,9 +960,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC6deleteXeXeF"></a>
+                    <a name="/s:12TravisClientAAC6deleteySS29environmentVariableIdentifier_SS13forRepositoryy6ResultAFOyAA4MetaVyAA011EnvironmentE0VGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/delete(environmentVariableIdentifier:forRepository:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC6deleteXeXeF">delete(environmentVariableIdentifier:forRepository:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC6deleteySS29environmentVariableIdentifier_SS13forRepositoryy6ResultAFOyAA4MetaVyAA011EnvironmentE0VGAA0A5ErrorOGc10completiontF">delete(environmentVariableIdentifier:forRepository:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -985,9 +1000,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC8settingsXeXeF"></a>
+                    <a name="/s:12TravisClientAAC8settingsySS13forRepository_y6ResultAEOyAA4MetaVySayAA7SettingVGGAA0A5ErrorOGc10completiontF"></a>
                     <a name="//apple_ref/swift/Method/settings(forRepository:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC8settingsXeXeF">settings(forRepository:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC8settingsySS13forRepository_y6ResultAEOyAA4MetaVySayAA7SettingVGGAA0A5ErrorOGc10completiontF">settings(forRepository:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1024,9 +1039,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12TravisClientAAC6followXeXeF"></a>
+                    <a name="/s:12TravisClientAAC6followyAA5EmbedVyxG5embed_y6ResultAHOyAA4MetaVy4FullAA7MinimalPQzGAA0A5ErrorOGc10completionts9DecodableRzs9EncodableRzAaMRzlF"></a>
                     <a name="//apple_ref/swift/Method/follow(embed:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12TravisClientAAC6followXeXeF">follow(embed:completion:)</a>
+                    <a class="token" href="#/s:12TravisClientAAC6followyAA5EmbedVyxG5embed_y6ResultAHOyAA4MetaVy4FullAA7MinimalPQzGAA0A5ErrorOGc10completionts9DecodableRzs9EncodableRzAaMRzlF">follow(embed:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1042,6 +1057,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">follow</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:12TravisClient7MinimalP">Minimal</a></span><span class="o">&gt;</span><span class="p">(</span><span class="nv">embed</span><span class="p">:</span> <span class="kt"><a href="../Structs/Embed.html">Embed</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">.</span><span class="kt">Full</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12TravisClientAAC6followyAA4PageVyxG4page_y6ResultAHOyAA4MetaVyxGAA0A5ErrorOGc10completionts9DecodableRzs9EncodableRzlF"></a>
+                    <a name="//apple_ref/swift/Method/follow(page:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12TravisClientAAC6followyAA4PageVyxG4page_y6ResultAHOyAA4MetaVyxGAA0A5ErrorOGc10completionts9DecodableRzs9EncodableRzlF">follow(page:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">follow</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs/Page.html">Page</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
