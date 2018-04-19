@@ -23,8 +23,10 @@ extension String {
     }
 }
 
-func onMain<T: Codable>(completion: @escaping ResultCompletion<T>, result: Result<T, TravisError>) {
-    DispatchQueue.main.async {
+func onQueue<T: Codable>(_ queue: DispatchQueue?, completion: @escaping ResultCompletion<T>, result: Result<T, TravisError>) {
+    if let theQueue = queue {
+        theQueue.async { completion(result) }
+    } else {
         completion(result)
     }
 }

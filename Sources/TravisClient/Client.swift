@@ -1,3 +1,4 @@
+import Dispatch
 import Foundation
 @_exported import Result
 
@@ -5,6 +6,7 @@ import Foundation
 public class TravisClient {
     private let session: URLSession
     private let host: TravisEndpoint
+    private let completionQueue: DispatchQueue
 
     /// Create a TravisClient to interact with the API
     ///
@@ -12,9 +14,10 @@ public class TravisClient {
     ///   - token: Your travis api token
     ///   - host: .org, .pro or .enterprise("custom.url")
     ///   - session: Optional URLSession for dependency injection
-    public init(token: String, host: TravisEndpoint = .org, session: URLSession? = nil) {
+    public init(token: String, host: TravisEndpoint = .org, session: URLSession? = nil, queue: DispatchQueue = .main) {
         self.host = host
         self.session = session ?? URLSession(configuration: TravisClient.makeConfiguration(withToken: token))
+        completionQueue = queue
     }
 
     // MARK: Repositories
@@ -186,7 +189,7 @@ public class TravisClient {
     public func follow<T>(page: Page<T>, completion: @escaping Completion<T>) {
         guard let components = URLComponents(string: page.path.rawValue) else {
             let result = Result<Meta<T>, TravisError>.failure(.notPathEscapable)
-            onMain(completion: completion, result: result)
+            onQueue(completionQueue, completion: completion, result: result)
             return
         }
 
@@ -205,10 +208,10 @@ public class TravisClient {
     }
 
     func concreteRequest<T: Codable>(_ url: URLRequest, completion: @escaping ResultCompletion<T>) {
-        session.dataTask(with: url) { data, _, _ in
+        session.dataTask(with: url) { [weak self] data, _, _ in
             guard let someData = data else {
                 let result: Result<T, TravisError> = Result(error: .noData)
-                onMain(completion: completion, result: result)
+                onQueue(self?.completionQueue, completion: completion, result: result)
                 return
             }
 
@@ -221,7 +224,7 @@ public class TravisClient {
 
             do {
                 let result = try jsonDecoder.decode(T.self, from: someData)
-                onMain(completion: completion, result: .init(result))
+                onQueue(self?.completionQueue, completion: completion, result: .init(result))
             } catch {
                 let wrappedError: TravisError
                 if let travisMessage = try? jsonDecoder.decode(TravisErrorMessage.self, from: someData) {
@@ -230,7 +233,7 @@ public class TravisClient {
                     wrappedError = TravisError.unableToDecode(error: error)
                 }
                 let result: Result<T, TravisError> = Result(error: wrappedError)
-                onMain(completion: completion, result: result)
+                onQueue(self?.completionQueue, completion: completion, result: result)
             }
         }.resume()
     }

@@ -76,22 +76,21 @@ class JSONTests: XCTestCase {
         XCTAssertEqual(result[\.content].lengthOfBytes(using: .utf8), 36483)
     }
 
-
     func testObjectSubscripting() throws {
         url = path.appendingPathComponent("build-restart.json")
         let build = try decoder.decode(Action<MinimalBuild>.self, from: data)
         let result = Result<Action<MinimalBuild>, TravisError>.init(value: build)
 
         #if swift(>=4.1)
-        let resultBuildNumber = result[\.id]
+            let resultBuildNumber = result[\.id]
         #else
-        let resultBuildNumber = result.value?[\.id]
+            let resultBuildNumber = result.value?[\.id]
         #endif
 
         let value = result.value
         let buildNumber = build[\.id]
-        XCTAssertEqual(resultBuildNumber, 359741180)
-        XCTAssertEqual(buildNumber, 359741180)
+        XCTAssertEqual(resultBuildNumber, 359_741_180)
+        XCTAssertEqual(buildNumber, 359_741_180)
     }
 
     static var allTests = [
