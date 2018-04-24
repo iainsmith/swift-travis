@@ -154,6 +154,13 @@ final class TravisClientTests: XCTestCase {
     }
 
     static var allTests = [
+        ("testUserBuildsPagination", testUserBuildsPagination),
         ("testUserBuilds", testUserBuilds),
+        ("testExampleBuildsRepo", testExampleBuildsRepo),
+        ("testLoadingBuild", testLoadingBuild),
+        ("testJobsAndLink", testJobsAndLink),
+        ("testRestartBuild", testRestartBuild),
+        ("testLogs", testLogs),
+        ("testSettings", testSettings),
     ]
 }
