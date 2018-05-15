@@ -31,6 +31,8 @@ class JSONTests: XCTestCase {
     func testJobs() throws {
         url = path.appendingPathComponent("build-jobs.json")
         let result = try decoder.decode(Meta<[Job]>.self, from: data)
+        let duration = result[\[Job].first?.duration]
+        XCTAssertEqual(duration, 65)
         XCTAssertNotNil(result)
     }
 
@@ -89,6 +91,7 @@ class JSONTests: XCTestCase {
 
         let value = result.value
         let buildNumber = build[\.id]
+        XCTAssertNotNil(value)
         XCTAssertEqual(resultBuildNumber, 359_741_180)
         XCTAssertEqual(buildNumber, 359_741_180)
     }
