@@ -1,9 +1,7 @@
 public struct Setting: Codable {
     public let name: String
     public let value: Value
-}
 
-extension Setting {
     public enum Value: Codable {
         case bool(Bool)
         case int(Int)
@@ -23,7 +21,6 @@ extension Setting {
             throw TravisError.noData
         }
 
-        public func encode(to _: Encoder) throws {
-        }
+        public func encode(to _: Encoder) throws {}
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-protocol QueryConvertible {
+public protocol QueryConvertible {
     var queryItems: [URLQueryItem]? { get }
 }
 
@@ -28,7 +28,7 @@ public struct Query<T: CustomStringConvertible>: Encodable, QueryConvertible {
         try container.encodeIfPresent(sortBy?.description, forKey: .sortBy)
     }
 
-    var queryItems: [URLQueryItem]? {
+    public var queryItems: [URLQueryItem]? {
         var items = [URLQueryItem]()
         if let limit = limit {
             items.append(URLQueryItem(name: "limit", value: "\(limit)"))
