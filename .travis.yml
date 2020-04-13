@@ -1,13 +1,15 @@
 language: generic
 dist: trusty
+sudo: required
 osx_image: xcode11.4
 os:
   - linux
   - osx
 env:
   - SWIFT_VERSION=5.1
+  - SWIFT_VERSION=5.2.1
 install:
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then eval "$(curl -sL https://swiftenv.fuller.li/en/latest/install.sh)" ; fi
+  - eval "$(curl -sL https://swiftenv.fuller.li/en/latest/install.sh)"
 script:
   - set -o pipefail
   - swift test --filter TravisClientTests.JSONTests
