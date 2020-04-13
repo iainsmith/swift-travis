@@ -1,4 +1,5 @@
-public struct Meta<Object: Codable>: Codable, ObjectSubscriptable {
+@dynamicMemberLookup
+public struct Metadata<Object: Codable>: Codable {
     public let type: String
     public let path: String
     public let pagination: Pagination<Object>?
@@ -27,4 +28,17 @@ public struct Meta<Object: Codable>: Codable, ObjectSubscriptable {
             self.object = try Object(from: decoder)
         }
     }
+
+    public subscript<T>(dynamicMember keyPath: KeyPath<Object, T>) -> T {
+        return object[keyPath: keyPath]
+    }
+}
+
+extension Metadata: Sequence where Object: Sequence {
+    public func makeIterator() -> Object.Iterator {
+        object.makeIterator()
+    }
+
+    public typealias Element = Object.Element
+    public typealias Iterator = Object.Iterator
 }

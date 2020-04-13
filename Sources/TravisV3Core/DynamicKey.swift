@@ -1,13 +1,11 @@
-import Foundation
-
 struct DynamicKey: CodingKey {
     var stringValue: String
+    var intValue: Int?
 
     init?(stringValue: String) {
         self.stringValue = stringValue
     }
 
-    var intValue: Int?
     init?(intValue _: Int) {
         return nil
     }

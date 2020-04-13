@@ -1,7 +1,8 @@
 import Foundation
 
 /// Meta information about an Action taken on the object.
-public struct Action<Object: Codable>: Codable, ObjectSubscriptable {
+@dynamicMemberLookup
+public struct Action<Object: Codable>: Codable {
     public let type: String
     public let resourceType: String
     public let stateChange: String
@@ -21,5 +22,9 @@ public struct Action<Object: Codable>: Codable, ObjectSubscriptable {
         stateChange = try standardContainer.decode(String.self, forKey: .stateChange)
         let dynamicContainer = try decoder.container(keyedBy: DynamicKey.self)
         object = try dynamicContainer.decode(Object.self, forKey: DynamicKey(stringValue: resource)!)
+    }
+
+    public subscript<T>(dynamicMember keyPath: KeyPath<Object, T>) -> T {
+        return object[keyPath: keyPath]
     }
 }

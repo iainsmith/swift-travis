@@ -1,32 +1,55 @@
-# TravisClient
+# swift-travis
 
-A Travis v3 API client for Swift 4.x
+A Swift interface to the travis-ci v3 API. Supports [travis-ci.org](https://travis-ci.org), [travis-ci.com](https://travis-ci.com) & on premise deployments.
 
 [![Build Status](https://travis-ci.org/iainsmith/TravisClient.svg?branch=master)](https://travis-ci.org/iainsmith/TravisClient) | [Read the docs](https://iainsmith.github.io/TravisClient/index.html)
 
 ## Installation
 
-* Install with cocoapods: `pod 'TravisClient'`
-* Install with SPM `.package(url: "https://github.com/IainSmith/TravisClient", from: "0.2.0"),`
+* Install with SPM `.package(url: "https://github.com/iainsmith/swift-travis", from: "0.3.0"),`
+* The swift-travis package has the following 3 libraries you can use in your application.
 
-### Quick Usage
+| Use-case | interface | target |
+|---|---|---|
+| iOS & Mac apps | URLSession |  `.product(name: "TravisClient", package: "swift-travis")`|
+| CLI & Server APPs | EventLoopFuture |  `.product(name: "TravisClientNIO", package: "swift-travis")` |
+| Build your own package | Codable structs |  `.product(name: "TravisV3Core", package: "swift-travis")` |
+
+### Quick example
 
 ```swift
 import TravisClient
 
-let key: String = "YOUR_TRAVIS_API_KEY"
+let key: String = ProcessInfo().environment["TRAVIS_TOKEN]"!
 let client = TravisClient(token: key, host: .org)
 
-client.activeBuilds { (result: Result<Meta<[Build]>, TravisError>) in
-    /// In swift 4.1 you can subscript directly into the Result
-    let activeBuildCount: Int? = result[\[Build].count]
-    let firstBuildPRTitle: String? = result[\.first?.pullRequestTitle]
+client.userBuilds(query: query) { result in
+  switch result {
+    case let .success(builds):
+      builds.count
+      builds.first?.pullRequestTitle
+    case let .failure(error):
+      // error handling
+  }
 }
+```
+
+### Swift NIO examples
+
+```swift
+import TravisClientNIO
+
+let key: String = ProcessInfo().environment["TRAVIS_TOKEN]"!
+let client = TravisClient(token: key, host: .org) // You can also pass an `EventLoopGroup`
+
+let builds = try client.builds(forRepository: repo).wait()
+print(builds.count)
+print(builds.first?.pullRequestTitle)
 ```
 
 ## Travis API Concepts.
 
-[Read the Travis API documentation](https://developer.travis-ci.com/gettingstarted) for much more detail. TravisClient follows the same naming conventions & concepts from the official api documentation.
+The api mirrors the names & concepts from the official [Travis API documentation](https://developer.travis-ci.com/gettingstarted).
 
 #### Minimal vs Standard Representation.
 
@@ -34,14 +57,15 @@ Each model object has two representations. A standard representation that includ
 
 ```swift
 public struct MinimalJob: Codable, Minimal {
-    public let id: Int
+  public typealias Full = Job
+  public let id: Int
 }
 
 public struct Job: Codable {
-    public let id: Int
-    public let number: String
-    public let state: String
-    // 10 other properties
+  public let id: Int
+  public let number: String
+  public let state: String
+  // 10 other properties
 }
 ```
 
@@ -54,45 +78,76 @@ let build: Meta<Build>
 let minimalJob: Embed<MinimalJob> = build.jobs.first! // don't do this in production code
 
 client.follow(embed: minimalJob) { fullJob in
-    print(fullJob[\.state])
+    print(fullJob.state)
 }
 ```
 
-## Usage
+##### Modelling the hypermedia API
+
+The Travis v3 API uses a custom hypermedia API spec, that is [described on their website](https://developer.travis-ci.com/hypermedia#hypermedia). The `TravisV3Core` targets has a generic `Metadata<Object>` struct.
+
+```swift
+@dynamicMemberLookup
+public struct Metadata<Object: Codable>: Codable {
+  public let type: String
+  public let path: String
+  public let pagination: Pagination<Object>?
+  public let object: Object
+}
+
+let builds: Metadata<[Build]>
+// dynamicMemberLookup means we can often use Metadata<[Build]> as [Build]
+builds.count == builds.object.count
+```
+
+Metadata<Object> gives us direct access to the `Pagination` data and the underlying `Object` through dynamicMemberLookup.
+
+The travis API often nests resources which is modelled with the `Embed<Object>` struct.
+
+```swift
+@dynamicMemberLookup
+public struct Embed<Object: Codable>: Codable {
+  public let type: String
+  public let path: String?
+  public let object: Object
+}
+
+struct Build {
+  public let repository: Embed<MinimalRepository>
+  public let branch: Embed<MinimalBranch>
+  public let commit: Embed<MinimalCommit>
+}
+
+let build: Metadata<Build>
+let branchName: String = build.branch.name
+```
+
+##### Links
+* You can call `client.follow(page:)` to load the a page of results from the paginated API
+* Similarly you can all `client.follow(embed:)` to fetch the Full version of a MinimalResource. e.g `MinimalBranch` -> `Branch`.
+
 
 ```swift
 import TravisClient
 
-let key: String = "YOUR_TRAVIS_API_KEY"
-let client = TravisClient(token: key, host: .org)
-
-client.activeBuilds { (result: Result<Meta<[Build]>, TravisError>) in
-
-    #if swift(>=4.1)
-    /// In swift 4.1 you can subscript directly into the Result
-    let activeBuildCount: Int? = result[\Build.id]
-    #else
-    /// In swift 4.0 you need to subscript into the optional value of a result.
-    let resultBuildNumber: Int? = result.value?[\.id]
-    #endif
-
+client.activeBuilds { (result: Result<MetaData<[Build]>, TravisError>) in
 
     /// You can also switch over the result
     switch result {
-    case success(let builds: Meta<[Build]>):
+    case success(let builds: MetaData<[Build]>)
         // Find the number of active builds
-        builds[\.count])
+        builds.count
 
         // Find the jobs associated with this build
-        guard let job: Embed<MinimalJob> = jobs[\.first] else { return }
+        guard let job: Embed<MinimalJob> = jobs.first else { return }
 
-        // Each API call returns one resource that has a 'standard representation' full object in this case  supports hyper media so you can easily load the full object in a second request.
-        client.follow(job) { (jobResult: Meta<Job>) in
+        // Each API call returns one resource that has a 'standard representation' full object in this case supports hyper media so you can easily load the full object in a second request.
+        client.follow(embed: job) { (jobResult: Result<MetaData<Job>>) in
             print(jobResult)
         }
 
         // Or follow a paginated request
-        client.follow(builds.pagination?.next) { nextPage in
+        client.follow(page: builds.pagination.next) { nextPage in
             print(nextPage)
         }
 
@@ -107,11 +162,18 @@ client.activeBuilds { (result: Result<Meta<[Build]>, TravisError>) in
 
 ```sh
 # JSON parsing tests
-> swift test --filter TravisClientTests.JSONTests
+> swift test
 
-# Hit the travis.org API  
+# Hit the travis.org API
 > TRAVIS_TOKEN=YOUR_TOKEN_HERE swift test
 ```
+
+The Integration tests only run if you have a `TRAVIS_TOKEN` environment variable set. This uses `XCTSkipIf` which requires Xcode 11.
+
+## Supported swift versions
+
+If you are using Swift 5.1 or newer you can use the latest release
+If you need support for Swift 4.2 or older use version `0.2.0`
 
 ## TODO
 

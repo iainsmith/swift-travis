@@ -97,7 +97,7 @@ public struct Build: Codable {
     /// - Note: This should be a date, but currently the built in iso8601 does not handle this format
     public let updatedAt: String
 
-    public let createdBy: Embed<MinimalUser>
+    public let createdBy: Embed<MinimalUser>?
 
     enum CodingKeys: String, CodingKey {
         case id
