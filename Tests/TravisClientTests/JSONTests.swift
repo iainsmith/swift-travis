@@ -30,7 +30,7 @@ class JSONTests: XCTestCase {
 
     func testJobs() throws {
         url = path.appendingPathComponent("build-jobs.json")
-        let result = try decoder.decode(Meta<[Job]>.self, from: data)
+        let result = try decoder.decode(Metadata<[Job]>.self, from: data)
         XCTAssertNotNil(result)
     }
 
@@ -42,55 +42,45 @@ class JSONTests: XCTestCase {
 
     func testBuilds() throws {
         url = path.appendingPathComponent("builds.json")
-        let result = try decoder.decode(Meta<[Build]>.self, from: data)
+        let result = try decoder.decode(Metadata<[Build]>.self, from: data)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result[\[Build].count], 89)
+        XCTAssertEqual(result.count, 25)
     }
 
     func testRepoActivate() throws {
         url = path.appendingPathComponent("repo-activate.json")
-        let result = try decoder.decode(Meta<Repository>.self, from: data)
+        let result = try decoder.decode(Metadata<Repository>.self, from: data)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result[\Repository.id], 18_391_368)
+        XCTAssertEqual(result.id, 18_391_368)
     }
 
     func testRepoBranches() throws {
         url = path.appendingPathComponent("repo-branches.json")
-        let result = try decoder.decode(Meta<[Branch]>.self, from: data)
+        let result = try decoder.decode(Metadata<[Branch]>.self, from: data)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result[\[Branch].count], 8)
+        XCTAssertEqual(result.count, 8)
     }
 
     func testRepoSettings() throws {
         url = path.appendingPathComponent("repo-settings.json")
-        let result = try decoder.decode(Meta<[Setting]>.self, from: data)
+        let result = try decoder.decode(Metadata<[Setting]>.self, from: data)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result[\[Setting].count], 6)
+        XCTAssertEqual(result.count, 6)
     }
 
     func testLogs() throws {
         url = path.appendingPathComponent("job-log.json")
-        let result = try decoder.decode(Meta<Log>.self, from: data)
+        let result = try decoder.decode(Metadata<Log>.self, from: data)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result[\.id], 266_982_558)
-        XCTAssertEqual(result[\.content].lengthOfBytes(using: .utf8), 36483)
+        XCTAssertEqual(result.id, 266_982_558)
+        XCTAssertEqual(result.content.lengthOfBytes(using: .utf8), 36483)
     }
 
     func testObjectSubscripting() throws {
         url = path.appendingPathComponent("build-restart.json")
         let build = try decoder.decode(Action<MinimalBuild>.self, from: data)
-        let result = Result<Action<MinimalBuild>, TravisError>.init(value: build)
-
-        #if swift(>=4.1)
-            let resultBuildNumber = result[\.id]
-        #else
-            let resultBuildNumber = result.value?[\.id]
-        #endif
-
-        let value = result.value
-        let buildNumber = build[\.id]
-        XCTAssertEqual(resultBuildNumber, 359_741_180)
-        XCTAssertEqual(buildNumber, 359_741_180)
+        XCTAssertEqual(build.id, 359_741_180)
+        XCTAssertEqual(build.number, "25")
     }
 
     static var allTests = [

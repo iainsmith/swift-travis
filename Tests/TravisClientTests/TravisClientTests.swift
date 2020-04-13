@@ -6,11 +6,21 @@ import XCTest
 final class TravisClientTests: XCTestCase {
     var client: TravisClient!
 
+    #if os(OSX) && compiler(>=5.2)
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        let key = ProcessInfo.processInfo.environment["TRAVIS_KEY"]
+        try XCTSkipIf(key == nil)
+        client = TravisClient(token: key!)
+    }
+
+    #else
     override func setUp() {
         super.setUp()
-        let key = ProcessInfo.processInfo.environment["TRAVIS_KEY"]!
-        client = TravisClient(token: key)
+        let key = ProcessInfo.processInfo.environment["TRAVIS_KEY"]
+        client = TravisClient(token: key!)
     }
+    #endif
 
     func testUserBuildsPagination() throws {
         let query: BuildQuery = Query(limit: 10, sortBy: .startedAt)
@@ -57,7 +67,7 @@ final class TravisClientTests: XCTestCase {
     func testExampleBuildsRepo() throws {
         let exp = expectation(description: "network")
         client.builds(forRepository: "iainsmith/SwiftGherkin") { result in
-            if case let .success = result {
+            if case .success = result {
                 exp.fulfill()
             } else {
                 XCTFail()
@@ -70,7 +80,7 @@ final class TravisClientTests: XCTestCase {
     func testLoadingBuild() throws {
         let exp = expectation(description: "network")
         client.build(identifier: "365367401") { result in
-            if case let .success = result {
+            if case .success = result {
                 exp.fulfill()
             } else {
                 XCTFail()
@@ -84,12 +94,11 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.jobs(forBuild: "365367401") { [weak self] result in
             if case let .success(jobs) = result {
-                let firstBuild = \[Job].first?.build
-                guard let build = jobs[firstBuild] else { return }
+                guard let build = jobs.first?.build else { return }
                 self?.client.follow(embed: build) { result in
                     if case let .success(build) = result {
-                        XCTAssertEqual(build[\.id], 365_367_401)
-                        XCTAssertEqual(build[\.state], "passed")
+                        XCTAssertEqual(build.id, 365_367_401)
+                        XCTAssertEqual(build.state, "passed")
                         exp.fulfill()
                     } else {
                         XCTFail()
@@ -108,7 +117,7 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.restartBuild(identifier: "359741180") { result in
             switch result {
-            case let .success:
+            case .success:
                 exp.fulfill()
             case let .failure(error):
                 switch error {
@@ -128,7 +137,7 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.log(forJob: "365367403") { result in
             if case let .success(log) = result {
-                let number = log[\.id]
+                let number = log.id
                 XCTAssertEqual(number, 266_982_558)
                 exp.fulfill()
             } else {
@@ -143,7 +152,7 @@ final class TravisClientTests: XCTestCase {
         let exp = expectation(description: "network")
         client.settings(forRepository: "iainsmith/SwiftGherkin") { result in
             if case let .success(settings) = result {
-                XCTAssertEqual(settings[\[Setting].first?.name], "builds_only_with_travis_yml")
+                XCTAssertEqual(settings.first?.name, "builds_only_with_travis_yml")
                 exp.fulfill()
             } else {
                 XCTFail()

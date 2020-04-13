@@ -1,9 +1,17 @@
 import Dispatch
 import Foundation
-@_exported import Result
+@_exported import TravisV3Core
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /// API Client for talking to the travis v3 api.
 public class TravisClient {
+    public typealias MetadataCompletion<T: Codable> = (Result<Metadata<T>, TravisError>) -> Void
+    public typealias ActionCompletion<T: Codable> = (Result<Action<T>, TravisError>) -> Void
+
+    typealias ResultCompletion<T: Codable> = (Result<T, TravisError>) -> Void
+
     private let session: URLSession
     private let host: TravisEndpoint
     private let completionQueue: DispatchQueue
@@ -27,7 +35,7 @@ public class TravisClient {
     /// - Parameters:
     ///   - owner: The github username or ID
     ///   - completion: Either a Meta<[Repository]> or a TravisError
-    public func repositories(forOwner owner: String, query: GeneralQuery? = nil, completion: @escaping Completion<[Repository]>) {
+    public func repositories(forOwner owner: String, query: GeneralQuery? = nil, completion: @escaping MetadataCompletion<[Repository]>) {
         let url = makeURL(path: "/owner/\(owner.pathEscape())/repos", query: query)
         request(url, completion: completion)
     }
@@ -35,7 +43,7 @@ public class TravisClient {
     /// Fetch the repositories for the current user
     ///
     /// - Parameter completion: Either a Meta<[Repository]> or a TravisError
-    public func userRepositories(query: GeneralQuery? = nil, completion: @escaping Completion<[Repository]>) {
+    public func userRepositories(query: GeneralQuery? = nil, completion: @escaping MetadataCompletion<[Repository]>) {
         let url = makeURL(path: "/repos", query: query)
         request(url, completion: completion)
     }
@@ -45,19 +53,19 @@ public class TravisClient {
     /// Fetch the active builds for the current user
     ///
     /// - Parameter completion: Either a Meta<[Build]> or a TravisError
-    public func userActiveBuilds(query: BuildQuery?, completion: @escaping Completion<[Build]>) {
+    public func userActiveBuilds(query: BuildQuery?, completion: @escaping MetadataCompletion<[Build]>) {
         let url = makeURL(path: "/active", query: query)
         request(url, completion: completion)
     }
 
     // MARK: Jobs
 
-    public func jobs(forBuild identfier: String, query: GeneralQuery? = nil, completion: @escaping Completion<[Job]>) {
+    public func jobs(forBuild identfier: String, query: GeneralQuery? = nil, completion: @escaping MetadataCompletion<[Job]>) {
         let url = makeURL(path: "/build/\(identfier.pathEscape())/jobs", query: query)
         request(url, completion: completion)
     }
 
-    public func job(withIdentifier identifier: String, completion: @escaping Completion<Job>) {
+    public func job(withIdentifier identifier: String, completion: @escaping MetadataCompletion<Job>) {
         let url = makeURL(path: "/job/\(identifier)")
         request(url, completion: completion)
     }
@@ -66,65 +74,65 @@ public class TravisClient {
 
     // MARK: Branches
 
-    public func branches(forBuild identfier: String, query: GeneralQuery? = nil, completion: @escaping Completion<[Branch]>) {
+    public func branches(forBuild identfier: String, query: GeneralQuery? = nil, completion: @escaping MetadataCompletion<[Branch]>) {
         let url = makeURL(path: "/repo/\(identfier.pathEscape())/branchs", query: query)
         request(url, completion: completion)
     }
 
     public func branch(forRepo repoIdentifier: String,
                        withIdentifier identifier: String,
-                       completion: @escaping Completion<Branch>) {
+                       completion: @escaping MetadataCompletion<Branch>) {
         let url = makeURL(path: "/repo/\(repoIdentifier.pathEscape())/branch/\(identifier.pathEscape())")
         request(url, completion: completion)
     }
 
     // MARK: Repository
 
-    public func repository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
+    public func repository(_ idOrSlug: String, completion: @escaping MetadataCompletion<Repository>) {
         let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())", method: .post)
         request(url, completion: completion)
     }
 
-    public func activateRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
+    public func activateRepository(_ idOrSlug: String, completion: @escaping MetadataCompletion<Repository>) {
         let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/activate", method: .post)
         request(url, completion: completion)
     }
 
-    public func deactivateRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
+    public func deactivateRepository(_ idOrSlug: String, completion: @escaping MetadataCompletion<Repository>) {
         let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/deactivate", method: .post)
         request(url, completion: completion)
     }
 
-    public func starRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
+    public func starRepository(_ idOrSlug: String, completion: @escaping MetadataCompletion<Repository>) {
         let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/star", method: .post)
         request(url, completion: completion)
     }
 
-    public func unstarRepository(_ idOrSlug: String, completion: @escaping Completion<Repository>) {
+    public func unstarRepository(_ idOrSlug: String, completion: @escaping MetadataCompletion<Repository>) {
         let url = makeURL(path: "/repo/\(idOrSlug.pathEscape())/unstar", method: .post)
         request(url, completion: completion)
     }
 
     // MARK: Builds
 
-    public func userBuilds(query: BuildQuery? = nil, completion: @escaping Completion<[Build]>) {
+    public func userBuilds(query: BuildQuery? = nil, completion: @escaping MetadataCompletion<[Build]>) {
         let url = makeURL(path: "/builds", query: query)
         request(url, completion: completion)
     }
 
-    public func builds(forRepository repoIdOrSlug: String, query: BuildQuery? = nil, completion: @escaping Completion<[Build]>) {
+    public func builds(forRepository repoIdOrSlug: String, query: BuildQuery? = nil, completion: @escaping MetadataCompletion<[Build]>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/builds", query: query)
         request(url, completion: completion)
     }
 
-    public func log(forJob jobIdentifier: String, completion: @escaping Completion<Log>) {
+    public func log(forJob jobIdentifier: String, completion: @escaping MetadataCompletion<Log>) {
         let url = makeURL(path: "/job/\(jobIdentifier.pathEscape())/log")
         request(url, completion: completion)
     }
 
     // MARK: Build
 
-    public func build(identifier: String, completion: @escaping Completion<Build>) {
+    public func build(identifier: String, completion: @escaping MetadataCompletion<Build>) {
         let url = makeURL(path: "/build/\(identifier)")
         request(url, completion: completion)
     }
@@ -134,21 +142,21 @@ public class TravisClient {
         request(url, completion: completion)
     }
 
-    public func cancelBuild(identifier: String, completion: @escaping Completion<MinimalBuild>) {
+    public func cancelBuild(identifier: String, completion: @escaping MetadataCompletion<MinimalBuild>) {
         let url = makeURL(path: "/build/\(identifier)/cancel", method: .post)
         request(url, completion: completion)
     }
 
     // MARK: Env variables
 
-    public func environmentVariables(forRepository repoIdOrSlug: String, completion: @escaping Completion<[EnvironmentVariable]>) {
+    public func environmentVariables(forRepository repoIdOrSlug: String, completion: @escaping MetadataCompletion<[EnvironmentVariable]>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars")
         request(url, completion: completion)
     }
 
     public func create(_ env: EnvironmentVariableRequest,
                        forRepository repoIdOrSlug: String,
-                       completion: @escaping Completion<EnvironmentVariable>) {
+                       completion: @escaping MetadataCompletion<EnvironmentVariable>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_vars",
                           method: .post,
                           encodable: env)
@@ -158,14 +166,14 @@ public class TravisClient {
     public func update(_ env: EnvironmentVariableRequest,
                        environmentVariableIdentifier: String,
                        forRepository repoIdOrSlug: String,
-                       completion: @escaping Completion<EnvironmentVariable>) {
+                       completion: @escaping MetadataCompletion<EnvironmentVariable>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_var/\(environmentVariableIdentifier)", method: .patch, encodable: env)
         request(url, completion: completion)
     }
 
     public func delete(environmentVariableIdentifier: String,
                        forRepository repoIdOrSlug: String,
-                       completion: @escaping Completion<EnvironmentVariable>) {
+                       completion: @escaping MetadataCompletion<EnvironmentVariable>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/env_var/\(environmentVariableIdentifier)", method: .delete)
         request(url, completion: completion)
     }
@@ -173,22 +181,22 @@ public class TravisClient {
     // MARK: Settings
 
     public func settings(forRepository repoIdOrSlug: String,
-                         completion: @escaping Completion<[Setting]>) {
+                         completion: @escaping MetadataCompletion<[Setting]>) {
         let url = makeURL(path: "/repo/\(repoIdOrSlug.pathEscape())/settings")
         request(url, completion: completion)
     }
 
     // MARK: Links
 
-    public func follow<T: Minimal>(embed: Embed<T>, completion: @escaping Completion<T.Full>) {
+    public func follow<T: Minimal>(embed: Embed<T>, completion: @escaping MetadataCompletion<T.Full>) {
         guard let path = embed.path else { return }
         let url = makeURL(path: path)
         request(url, completion: completion)
     }
 
-    public func follow<T>(page: Page<T>, completion: @escaping Completion<T>) {
+    public func follow<T>(page: Page<T>, completion: @escaping MetadataCompletion<T>) {
         guard let components = URLComponents(string: page.path.rawValue) else {
-            let result = Result<Meta<T>, TravisError>.failure(.notPathEscapable)
+            let result = Result<Metadata<T>, TravisError>.failure(.notPathEscapable)
             onQueue(completionQueue, completion: completion, result: result)
             return
         }
@@ -199,7 +207,7 @@ public class TravisClient {
 
     // MARK: Requests
 
-    func request<T>(_ url: URLRequest, completion: @escaping Completion<T>) {
+    func request<T>(_ url: URLRequest, completion: @escaping MetadataCompletion<T>) {
         concreteRequest(url, completion: completion)
     }
 
@@ -210,21 +218,17 @@ public class TravisClient {
     func concreteRequest<T: Codable>(_ url: URLRequest, completion: @escaping ResultCompletion<T>) {
         session.dataTask(with: url) { [weak self] data, _, _ in
             guard let someData = data else {
-                let result: Result<T, TravisError> = Result(error: .noData)
+                let result: Result<T, TravisError> = .failure(.noData)
                 onQueue(self?.completionQueue, completion: completion, result: result)
                 return
             }
 
             let jsonDecoder = JSONDecoder()
-            if #available(OSX 10.12, *) {
-                jsonDecoder.dateDecodingStrategy = .iso8601
-            } else {
-                // TODO: Use a custom formatter when iso8601 is not supported .formatted(<#T##DateFormatter#>)
-            }
+            jsonDecoder.dateDecodingStrategy = .iso8601
 
             do {
                 let result = try jsonDecoder.decode(T.self, from: someData)
-                onQueue(self?.completionQueue, completion: completion, result: .init(result))
+                onQueue(self?.completionQueue, completion: completion, result: .success(result))
             } catch {
                 let wrappedError: TravisError
                 if let travisMessage = try? jsonDecoder.decode(TravisErrorMessage.self, from: someData) {
@@ -232,7 +236,7 @@ public class TravisClient {
                 } else {
                     wrappedError = TravisError.unableToDecode(error: error)
                 }
-                let result: Result<T, TravisError> = Result(error: wrappedError)
+                let result: Result<T, TravisError> = .failure(wrappedError)
                 onQueue(self?.completionQueue, completion: completion, result: result)
             }
         }.resume()
@@ -245,7 +249,7 @@ extension TravisClient {
         configuration.httpAdditionalHeaders = [
             "Travis-API-Version": "3",
             "Authorization": "token \(token)",
-            "User-Agent": "API Explorer",
+            "User-Agent": "TravisClientSwift",
         ]
 
         return configuration
@@ -274,5 +278,35 @@ extension TravisClient {
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.method
         return request
+    }
+}
+
+enum HTTPMethod {
+    case get
+    case post
+    case patch
+    case delete
+
+    var method: String {
+        switch self {
+        case .get: return "GET"
+        case .post: return "POST"
+        case .delete: return "DELETE"
+        case .patch: return "PATCH"
+        }
+    }
+}
+
+extension String {
+    func pathEscape() -> String {
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
+    }
+}
+
+func onQueue<T: Codable>(_ queue: DispatchQueue?, completion: @escaping TravisClient.ResultCompletion<T>, result: Result<T, TravisError>) {
+    if let theQueue = queue {
+        theQueue.async { completion(result) }
+    } else {
+        completion(result)
     }
 }

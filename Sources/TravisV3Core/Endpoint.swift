@@ -4,7 +4,7 @@ public enum TravisEndpoint {
     case org
     case enterprise(String)
 
-    var host: String {
+    public var host: String {
         switch self {
         case .org: return "api.travis-ci.org"
         case .pro: return "api.travis-ci.com"
