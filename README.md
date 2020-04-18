@@ -123,8 +123,8 @@ let branchName: String = build.branch.name
 ```
 
 ##### Links
-* You can call `client.follow(page:)` to load the a page of results from the paginated API
-* Similarly you can all `client.follow(embed:)` to fetch the Full version of a MinimalResource. e.g `MinimalBranch` -> `Branch`.
+* You can call `client.follow(page:)` to load the next page of results from the paginated API
+* Similarly you can call `client.follow(embed:)` to fetch the full version of a MinimalResource. e.g `MinimalBranch` -> `Branch`.
 
 
 ```swift
@@ -168,12 +168,12 @@ client.activeBuilds { (result: Result<MetaData<[Build]>, TravisError>) in
 > TRAVIS_TOKEN=YOUR_TOKEN_HERE swift test
 ```
 
-The Integration tests only run if you have a `TRAVIS_TOKEN` environment variable set. This uses `XCTSkipIf` which requires Xcode 11.
+The Integration tests only run if you have a `TRAVIS_TOKEN` environment variable set. This uses `XCTSkipIf` which requires Xcode 11.4. Alternatively you can call `swift test --filter TravisClientTests.JSONTests`
 
 ## Supported swift versions
 
 If you are using Swift 5.1 or newer you can use the latest release
-If you need support for Swift 4.2 or older use version `0.2.0`
+If you need support for Swift 5 or older, use version `0.2.0`
 
 ## TODO
 
